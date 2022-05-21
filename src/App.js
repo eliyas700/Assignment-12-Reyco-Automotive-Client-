@@ -1,10 +1,11 @@
-import logo from "./logo.svg";
-import "./App.css";
+import { Routes } from "react-router-dom";
+import Header from "./Pages/Hompage/Header/Header";
 
 function App() {
   return (
-    <div className="App">
-      <h1>Reyco-Automotive</h1>
+    <div>
+      <Header></Header>
+      <Routes></Routes>
     </div>
   );
 }
