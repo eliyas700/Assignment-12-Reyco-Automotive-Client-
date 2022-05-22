@@ -1,6 +1,9 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { useForm } from "react-hook-form";
-import { Link } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
+import { useSignInWithEmailAndPassword } from "react-firebase-hooks/auth";
+import auth from "../../firebase.init";
+import Loading from "../Shared/Header/Loading/Loading";
 import SocialLogin from "./SocialLogin";
 
 const LogIn = () => {
@@ -9,7 +12,34 @@ const LogIn = () => {
     formState: { errors },
     handleSubmit,
   } = useForm();
-  const onSubmit = (data) => {};
+  const [signInWithEmailAndPassword, user, loading, error] =
+    useSignInWithEmailAndPassword(auth);
+
+  let signInError;
+  const navigate = useNavigate();
+  const location = useLocation();
+  let from = location.state?.from?.pathname || "/";
+
+  useEffect(() => {
+    if (user) {
+      navigate(from, { replace: true });
+    }
+  }, [from, navigate]);
+
+  if (loading) {
+    return <Loading></Loading>;
+  }
+
+  if (error) {
+    signInError = (
+      <p className="text-red-500">
+        <small>{error?.message}</small>
+      </p>
+    );
+  }
+  const onSubmit = (data) => {
+    signInWithEmailAndPassword(data.email, data.password);
+  };
   return (
     <div>
       <div className="flex h-screen justify-center items-center">
@@ -82,7 +112,7 @@ const LogIn = () => {
                 </label>
               </div>
 
-              {/* {signInError} */}
+              {signInError}
               <input
                 className="btn btn-primary w-full max-w-xs text-white"
                 type="submit"
