@@ -13,7 +13,7 @@ const Product = ({ product }) => {
   } = product;
   return (
     <div>
-      <div class="card lg:card-side   bg-base-100 shadow-xl">
+      <div class="card card-side   bg-base-100 shadow-xl">
         <figure>
           <img className="w-44 h-60" src={img} alt={name} />
         </figure>

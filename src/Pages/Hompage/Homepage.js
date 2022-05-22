@@ -2,8 +2,8 @@ import React from "react";
 import { Link } from "react-router-dom";
 import useProducts from "../../Hooks/useProducts";
 import HomepageBanner from "./HomepageBanner";
-import Product from "./Products/Product";
-import Products from "./Products/Products";
+import Product from "../Products/Product";
+import Reason from "./Reason/Reason";
 
 const Homepage = () => {
   const [products, setProducts] = useProducts([]);
@@ -11,11 +11,10 @@ const Homepage = () => {
     <div>
       <HomepageBanner></HomepageBanner>
       <div>
-        <h3 className="text-3xl font-bold text-secondary text-center font-serif my-3">
+        <h3 className="text-3xl font-bold text-secondary text-center font-serif my-10">
           Parts Available
         </h3>
         <div className="w-[98%] mx-auto">
-          This is from Products Section:{products.length}
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-5">
             {products.slice(0, 6).map((product) => (
               <Product key={product.id} product={product}></Product>
@@ -46,6 +45,12 @@ const Homepage = () => {
             </svg>
           </Link>
         </div>
+      </div>
+      <div>
+        <h3 className="text-3xl font-bold text-secondary text-center font-serif my-3">
+          Why Us ?
+        </h3>
+        <Reason></Reason>
       </div>
     </div>
   );

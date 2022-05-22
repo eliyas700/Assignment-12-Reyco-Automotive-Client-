@@ -1,6 +1,6 @@
 import { Route, Routes } from "react-router-dom";
 import Homepage from "./Pages/Hompage/Homepage";
-import Products from "./Pages/Hompage/Products/Products";
+import Products from "./Pages/Products/Products";
 import Header from "./Pages/Shared/Header/Header";
 
 function App() {

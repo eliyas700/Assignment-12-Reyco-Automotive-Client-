@@ -1,0 +1,9 @@
+.reason-item {
+    box-shadow: 10px 10px 20px #3e3e3e;
+    transition: .5s ease-in-out;
+}
+
+.reason-item:hover {
+    box-shadow: none;
+    transform: scale(1.07);
+}

@@ -1,5 +1,5 @@
 import React from "react";
-import useProducts from "../../../Hooks/useProducts";
+import useProducts from "../../Hooks/useProducts";
 import Product from "./Product";
 
 const Products = () => {
