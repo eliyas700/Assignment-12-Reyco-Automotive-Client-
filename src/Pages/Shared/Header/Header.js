@@ -27,7 +27,7 @@ const Header = () => {
   );
   return (
     <>
-      <div className="flex justify-between px-3 bg-gradient-to-r from-orange-500 to-yellow-500">
+      <div className="flex justify-between sticky top-0 z-50 px-3 bg-gradient-to-r from-orange-500 to-yellow-500">
         <div className="navbar-start">
           <Link
             to="/"
