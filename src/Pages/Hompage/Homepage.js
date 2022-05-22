@@ -5,6 +5,8 @@ import HomepageBanner from "./HomepageBanner";
 import Product from "../Products/Product";
 import Reason from "./Reason/Reason";
 import Reviews from "../Reviews/Reviews";
+import Specality from "../Speciality/Specality";
+import Offer from "../Offer/Offer";
 
 const Homepage = () => {
   const [products, setProducts] = useProducts([]);
@@ -12,6 +14,9 @@ const Homepage = () => {
     <div>
       <HomepageBanner></HomepageBanner>
       <div>
+        <div>
+          <Specality></Specality>
+        </div>
         <h3 className="text-3xl font-bold text-secondary text-center font-serif my-10">
           Parts Available
         </h3>
@@ -46,6 +51,9 @@ const Homepage = () => {
             </svg>
           </Link>
         </div>
+      </div>
+      <div>
+        <Offer></Offer>
       </div>
       <div>
         <h3 className="text-3xl font-bold text-secondary text-center font-serif my-3">
