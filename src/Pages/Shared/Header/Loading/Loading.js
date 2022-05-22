@@ -4,7 +4,8 @@ const Loading = () => {
   return (
     <div>
       <img
-        src="https://i.ibb.co/gvhBRbw/6af65dd321fbdf53a04ed7464a644f53.gif"
+        className="min-w-[80%] flex items-center justify-center min-h-[90%]"
+        src="https://i.ibb.co/4tPL22s/loading-waiting.gif"
         alt=""
       />
     </div>
