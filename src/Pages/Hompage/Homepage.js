@@ -54,6 +54,9 @@ const Homepage = () => {
         <Reason></Reason>
       </div>
       <div>
+        <h3 className="text-3xl font-bold text-secondary text-center font-serif my-12">
+          What our Clients Say
+        </h3>
         <Reviews></Reviews>
       </div>
     </div>
