@@ -4,6 +4,7 @@ import useProducts from "../../Hooks/useProducts";
 import HomepageBanner from "./HomepageBanner";
 import Product from "../Products/Product";
 import Reason from "./Reason/Reason";
+import Reviews from "../Reviews/Reviews";
 
 const Homepage = () => {
   const [products, setProducts] = useProducts([]);
@@ -51,6 +52,9 @@ const Homepage = () => {
           Why Us ?
         </h3>
         <Reason></Reason>
+      </div>
+      <div>
+        <Reviews></Reviews>
       </div>
     </div>
   );
