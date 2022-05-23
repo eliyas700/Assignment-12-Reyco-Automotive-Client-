@@ -14,6 +14,7 @@ const PurchaseItem = () => {
       .then((data) => setProduct(data));
   }, []);
   const {
+    _id,
     name,
     description,
     img,
@@ -23,13 +24,58 @@ const PurchaseItem = () => {
     payment,
     totalSell,
   } = product;
-
+  //After Submit
   const handleSubmit = (event) => {
     event.preventDefault();
-    const name = event.target.name.value;
+    const userName = event.target.name.value;
     const quantity = event.target.quantity.value;
-    console.log("quantity");
+    const address = event.target.address.value;
+    const phone = event.target.phone.value;
+    const email = event.target.email.value;
+    //Update Quantity After Purchase
+
+    const booking = {
+      bookingId: _id,
+      name,
+      description,
+      img,
+      price,
+      minOrder,
+      available,
+      payment,
+      totalSell,
+      userEmail: email,
+      phone: phone,
+      quantity: quantity,
+      user: userName,
+      address: address,
+
+      // treatmentId: _id,
+      // treatment: name,
+      // slot,
+      // price,
+      // date: fomattedDate,
+      // patient: user.email,
+      // patientName: user.displayName,
+      // phone: event.target.phone.value,
+    };
+    fetch("http://localhost:5000/orders", {
+      method: "POST",
+      headers: { "content-type": "application/json" },
+      body: JSON.stringify(booking),
+    })
+      .then((res) => res.json())
+      .then((data) => {
+        if (data.success) {
+          toast(`Your  Order For ${quantity} pieces ${name}  is Confirmed`);
+        } else {
+          toast.error(`Sorry You already Booked this Orders`);
+        }
+      });
+    console.log(name, quantity, address, phone, email);
   };
+
+  // Button Toggle On Condition
   const [quan, setQuan] = useState(false);
   const handleChange = (val) => {
     const quantity = val.target.value;
@@ -56,14 +102,16 @@ const PurchaseItem = () => {
               </figure>
               <div class="card-body">
                 {/* <h2 class="card-title text-xl font-bold">{name}</h2> */}
-                <p className="text-xl font-semibold my-2">
-                  Price :
-                  <span className="text-3xl font-bold text-primary">
-                    {" "}
-                    ${price}
-                  </span>
-                  / Piece
-                </p>
+                <div>
+                  <p className="text-xl font-semibold my-2">
+                    Price :
+                    <span className="text-3xl font-bold text-primary">
+                      {" "}
+                      ${price}
+                    </span>
+                    / Piece
+                  </p>
+                </div>
                 <div className="flex justify-between">
                   <p className="text-base font-semibold">
                     Available:{" "}
@@ -136,7 +184,6 @@ const PurchaseItem = () => {
                       id="phone"
                       required
                       placeholder="Type Your Phone Number"
-                      autocomplete="+122323234"
                       class="mt-1 block w-full py-2 px-3 border border-gray-300 bg-white rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
                     />
                   </div>
@@ -157,7 +204,7 @@ const PurchaseItem = () => {
                     />
                   </div>
 
-                  <div class="col-span-6 ">
+                  <div class="col-span-6 sm:col-span-3">
                     <label
                       for="quantity"
                       class="block text-sm font-medium text-gray-700"
@@ -173,6 +220,12 @@ const PurchaseItem = () => {
                       id="quantity"
                       class="mt-1 block w-30 py-2 px-3 border border-gray-300 bg-white rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
                     />
+                  </div>
+                  <div className="col-span-6 sm:col-span-3">
+                    <p className="text-lg font-semibold">
+                      Total Sell:{" "}
+                      <span className="text-purple-500">{totalSell}</span>
+                    </p>
                   </div>
                 </div>
               </div>
