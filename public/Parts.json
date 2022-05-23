@@ -1,6 +1,5 @@
 [
     {
-      "id": 1,
       "name": "Non Beadlock Wheel",
       "description": "Most stock and aftermarket non-beadlock wheels have an inner and outer bead shoulder designed into the wheel. This wheel design requires air pressure to keep the tire's inner and outer beads pressed tightly against the wheel.",
       "price": 127,
@@ -11,7 +10,6 @@
       "totalSell": 15000
     },
     {
-      "id": 2,
       "name": "OMO Black Steering  Wheel",
       "description": "AUTO MT - MOMO Black DSHAPE 12INCH Universal Steering Wheel for Sports Car Look Rally Race Off Road with HUB Free",
       "price": 1220,
@@ -22,7 +20,6 @@
       "totalSell": 1276
     },
     {
-      "id": 3,
       "name": "Premium Engine Oil Filter",
       "description": "The oil filter maintains continuous oil flow and removes particles (dirt, oxidized oil, metallic particles) that may appear in the motor oil due to engine wear. It purifies the motor oil so that it can do its job efficiently. An oil filter has enough contaminant holding capacity to remain fully functional until the next oil change.The oil filter maintains continuous oil flow and removes particles (dirt, oxidized oil, metallic particles) that may appear in the motor oil due to engine wear. It purifies the motor oil so that it can do its job efficiently. An oil filter has enough contaminant holding capacity to remain fully functional until the next oil change.s",
       "price": 70,
@@ -33,7 +30,6 @@
       "totalSell": 15000
     },
     {
-      "id": 4,
       "name": "Golf Cart Tire ",
       "description": "Custom wheel and tire orders usually start with the wheel.  You will hear the term 3+4, 2+4 or 2+5 offset.  Most of our golf cart wheels are 3+4 offset as a 2+4 or 2+5 offset pushes the wheel out from the hub and therefore the body (see image below).  The second consideration is what size to choose for you cart.  Obviously the larger the custom wheel the more  ",
       "price": 1790,
@@ -44,7 +40,6 @@
       "totalSell": 14500
     },
     {
-      "id": 5,
       "name": "Stainless Steel Front Bumper",
       "description": "This front bumper is a structure attached to or integrated with the front and rear ends of a motor vehicle, to absorb impact in a minor collision, ideally minimizing repair costs. Bumpers ideally minimize height mismatches between vehicles and protect pedestrians from injury. It has the heavy-duty protection that works very smoothly. Textured black for durability and rugged style.",
       "price": 3250,
@@ -55,7 +50,6 @@
       "totalSell": 1340
     },
     {
-      "id": 6,
       "name": "Convex Glass 360 Degree  Mirror ",
       "description": "Car Vehicle Blind Spot Mirror Rear View Mirrors HD Convex Glass 360 Degree View Adjustable Mirror Silver.Specifications of Car Vehicle Blind Spot Mirror Rear View Mirrors HD Convex Glass 360 Degree View Adjustable Mirror Silver",
       "price": 23,
@@ -66,7 +60,6 @@
       "totalSell": 18340
     },
     {
-      "id": 7,
       "name": "120W Car Led Headlight",
       "description": "The oil filter maintains continuous oil flow and removes particles (dirt, oxidized oil, metallic particles) that may appear in the motor oil due to engine wear. It purifies the motor oil so that it can do its job efficiently. An oil filter has enough contaminant holding capacity to remain fully functional until the next oil change.The oil filter maintains continuous oil flow and removes particles (dirt, oxidized oil, metallic particles) that may appear in the motor oil due to engine wear. It purifies the motor oil so that it can do its job efficiently. An oil filter has enough contaminant holding capacity to remain fully functional until the next oil change.s",
       "price": 367,

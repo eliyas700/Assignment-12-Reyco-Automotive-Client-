@@ -5,7 +5,7 @@ import { useSignInWithEmailAndPassword } from "react-firebase-hooks/auth";
 import auth from "../../firebase.init";
 import Loading from "../Shared/Header/Loading/Loading";
 import SocialLogin from "./SocialLogin";
-
+import useToken from "../../Hooks/useToken";
 const LogIn = () => {
   const {
     register,
@@ -14,7 +14,7 @@ const LogIn = () => {
   } = useForm();
   const [signInWithEmailAndPassword, user, loading, error] =
     useSignInWithEmailAndPassword(auth);
-
+  const [token] = useToken(user);
   let signInError;
   const navigate = useNavigate();
   const location = useLocation();
@@ -25,7 +25,7 @@ const LogIn = () => {
   //     navigate(from, { replace: true });
   //   }
   // }, [from, navigate]);
-  if (user) {
+  if (token) {
     navigate(from, { replace: true });
   }
   if (loading) {
