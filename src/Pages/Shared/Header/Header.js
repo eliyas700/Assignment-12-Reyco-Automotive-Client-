@@ -23,7 +23,11 @@ const Header = () => {
       <li className="text-lg font-semibold">
         <Link to="/contact">Contact Us</Link>
       </li>
-
+      {user && (
+        <li className="text-lg font-semibold">
+          <Link to="/dashboard">Dashboard</Link>
+        </li>
+      )}
       {user ? (
         <li className="text-lg font-semibold">
           <button

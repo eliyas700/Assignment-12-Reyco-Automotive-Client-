@@ -49,15 +49,6 @@ const PurchaseItem = () => {
       quantity: quantity,
       user: userName,
       address: address,
-
-      // treatmentId: _id,
-      // treatment: name,
-      // slot,
-      // price,
-      // date: fomattedDate,
-      // patient: user.email,
-      // patientName: user.displayName,
-      // phone: event.target.phone.value,
     };
     fetch("http://localhost:5000/orders", {
       method: "POST",
@@ -69,7 +60,9 @@ const PurchaseItem = () => {
         if (data.success) {
           toast(`Your  Order For ${quantity} pieces ${name}  is Confirmed`);
         } else {
-          toast.error(`Sorry You already Booked this Orders`);
+          toast.error(
+            `Sorry You already Booked this Orders,Pay that order Now`
+          );
         }
       });
     console.log(name, quantity, address, phone, email);
