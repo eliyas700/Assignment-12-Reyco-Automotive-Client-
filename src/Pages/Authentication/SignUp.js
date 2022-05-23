@@ -8,15 +8,17 @@ import { Link, useNavigate } from "react-router-dom";
 import SocialLogin from "../Authentication/SocialLogin";
 import auth from "../../firebase.init";
 import Loading from "../Shared/Header/Loading/Loading";
+import useToken from "../../Hooks/useToken";
 const SignUp = () => {
   const {
     register,
     formState: { errors },
     handleSubmit,
   } = useForm();
+
   const [createUserWithEmailAndPassword, user, loading, error] =
     useCreateUserWithEmailAndPassword(auth);
-
+  const [token] = useToken(user);
   const [updateProfile, updating, updateError] = useUpdateProfile(auth);
 
   const navigate = useNavigate();
@@ -34,7 +36,7 @@ const SignUp = () => {
     );
   }
 
-  if (user) {
+  if (token) {
     navigate("/");
   }
 
