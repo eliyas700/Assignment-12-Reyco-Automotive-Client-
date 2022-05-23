@@ -20,12 +20,14 @@ const LogIn = () => {
   const location = useLocation();
   let from = location.state?.from?.pathname || "/";
 
-  useEffect(() => {
-    if (user) {
-      navigate(from, { replace: true });
-    }
-  }, [from, navigate]);
-
+  // useEffect(() => {
+  //   if (user) {
+  //     navigate(from, { replace: true });
+  //   }
+  // }, [from, navigate]);
+  if (user) {
+    navigate(from, { replace: true });
+  }
   if (loading) {
     return <Loading></Loading>;
   }
