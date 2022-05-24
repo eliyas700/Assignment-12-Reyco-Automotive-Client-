@@ -1,8 +1,10 @@
 import React from "react";
 import { useEffect, useState } from "react";
+import DeleteOrderModal from "./DeleteOrderModal";
 
 const ManageOrders = () => {
   const [orders, setOrders] = useState([]);
+  const [deleteOrder, setDeleteOrder] = useState(null);
   useEffect(() => {
     fetch("http://localhost:5000/orders", {
       headers: {
@@ -11,7 +13,7 @@ const ManageOrders = () => {
     })
       .then((res) => res.json())
       .then((data) => setOrders(data));
-  }, []);
+  }, [orders]);
 
   return (
     <div>
@@ -43,7 +45,13 @@ const ManageOrders = () => {
                 </td>
                 <td>
                   {order.payment === "unpaid" ? (
-                    <button className="btn-xs btn-error">Cancel Order</button>
+                    <label
+                      onClick={() => setDeleteOrder(order)}
+                      for="delete-doctor-modal"
+                      className="btn  btn-xs btn-error modal-button"
+                    >
+                      Cancel Order
+                    </label>
                   ) : (
                     <button className="btn-xs btn-primary">CShipment</button>
                   )}
@@ -53,6 +61,12 @@ const ManageOrders = () => {
           </tbody>
         </table>
       </div>
+      {deleteOrder && (
+        <DeleteOrderModal
+          deleteOrder={deleteOrder}
+          setDeleteOrder={setDeleteOrder}
+        ></DeleteOrderModal>
+      )}
     </div>
   );
 };
