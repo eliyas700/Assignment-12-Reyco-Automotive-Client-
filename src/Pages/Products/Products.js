@@ -11,9 +11,12 @@ const Products = () => {
         Available Parts
       </h3>
       <div className="grid grid-cols-1 lg:grid-cols-3 gap-5">
-        {products.map((product) => (
-          <Product key={product.id} product={product}></Product>
-        ))}
+        {products
+          .slice(0)
+          .reverse()
+          .map((product) => (
+            <Product key={product._id} product={product}></Product>
+          ))}
       </div>
     </div>
   );

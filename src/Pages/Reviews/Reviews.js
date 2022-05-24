@@ -57,11 +57,14 @@ const Reviews = () => {
       className="mySwiper"
     >
       <div className="grid grid-cols-1 lg:grid-cols-3 gap-12 my-12">
-        {reviews.map((review) => (
-          <SwiperSlide>
-            <Review key={review.id} review={review}></Review>
-          </SwiperSlide>
-        ))}
+        {reviews
+          .slice(0)
+          .reverse()
+          .map((review) => (
+            <SwiperSlide>
+              <Review key={review._id} review={review}></Review>
+            </SwiperSlide>
+          ))}
       </div>
     </Swiper>
   );

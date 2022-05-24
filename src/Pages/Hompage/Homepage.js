@@ -22,9 +22,12 @@ const Homepage = () => {
         </h3>
         <div className="w-[98%] mx-auto">
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-5">
-            {products.slice(0, 6).map((product) => (
-              <Product key={product.id} product={product}></Product>
-            ))}
+            {products
+              .slice(0, 6)
+              .reverse()
+              .map((product) => (
+                <Product key={product.id} product={product}></Product>
+              ))}
           </div>
         </div>
 
