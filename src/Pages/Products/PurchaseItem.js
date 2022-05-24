@@ -203,7 +203,7 @@ const PurchaseItem = () => {
                     <input
                       type="number"
                       name="quantity"
-                      onChange={handleChange}
+                      onBlur={handleChange}
                       // onChange={(e) => this.setState({ value: e.target.value })}
                       defaultValue={minOrder}
                       id="quantity"
