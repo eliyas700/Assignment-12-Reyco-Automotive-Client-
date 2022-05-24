@@ -21,7 +21,9 @@ const Dashboard = () => {
         <label htmlFor="my-drawer-2" className="drawer-overlay"></label>
         <ul className="menu p-4 overflow-y-auto w-48 lg:w-60 bg-base-100 text-base-content">
           {/* <!-- Sidebar content here --> */}
-          <li className="text-xl font-semibold text-secondary">User Panel</li>
+          <li className="text-xl font-semibold text-secondary">
+            {admin ? "Admin" : "User"}
+          </li>
           <li>
             <Link to="/dashboard">My Profile</Link>
           </li>
@@ -39,6 +41,9 @@ const Dashboard = () => {
             <>
               <li>
                 <Link to="/dashboard/manageUsers">Manage Users</Link>
+              </li>
+              <li>
+                <Link to="/dashboard/addProduct">Add Product</Link>
               </li>
             </>
           )}
