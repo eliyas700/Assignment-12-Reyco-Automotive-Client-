@@ -1,26 +1,65 @@
 import React from "react";
 import { useForm } from "react-hook-form";
 import { useNavigate } from "react-router-dom";
+import { toast } from "react-toastify";
 const AddProduct = () => {
   const {
     register,
     formState: { errors },
     handleSubmit,
+    reset,
   } = useForm();
   const navigate = useNavigate();
-
-  const onSubmit = async (data) => {};
+  const imageStorageKey = "fb945273156e5c66d0c7c83e4776688b";
+  const onSubmit = async (data) => {
+    const image = data.image[0];
+    const formData = new FormData();
+    formData.append("image", image);
+    const url = `https://api.imgbb.com/1/upload?key=${imageStorageKey}`;
+    fetch(url, {
+      method: "POST",
+      body: formData,
+    })
+      .then((res) => res.json())
+      .then((result) => {
+        if (result.success) {
+          const img = result.data.url;
+          const product = {
+            name: data.name,
+            description: data.description,
+            price: data.price,
+            minOrder: data.minQuantity,
+            available: data.available,
+            payment: "Unpaid",
+            totalSell: 0,
+            img: img,
+          };
+          //Send Product To DataBase
+          fetch("http://localhost:5000/products", {
+            method: "POST",
+            headers: {
+              "content-type": "application/json",
+              authorization: `Bearer ${localStorage.getItem("accessToken")}`,
+            },
+            body: JSON.stringify(product),
+          })
+            .then((res) => res.json())
+            .then((inserted) => {
+              if (inserted.insertedId) {
+                toast.success("Product Added Successfully");
+                reset();
+              } else {
+                toast.error("Failed To add the Product ,Try Again");
+              }
+            });
+        }
+      });
+  };
   return (
     <div>
       <div className="flex justify-center items-center">
         <div className="card w-md bg-base-100 shadow-xl">
-          <div className="card-body py-4">
-            {/* <img
-              className="block mx-auto"
-              width={"100px"}
-              src="https://i.ibb.co/VC53b2C/Reyco-logo.png"
-              alt=""
-            /> */}
+          <div className="card-body py-6">
             <h2 className="text-center text-2xl font-bold">Add Product</h2>
             <form onSubmit={handleSubmit(onSubmit)}>
               <div className="form-control w-full">
@@ -46,7 +85,7 @@ const AddProduct = () => {
                   )}
                 </label>
               </div>
-              <div className="grid grid-cols-1 lg:grid-cols-2 gap-5">
+              <div className="grid grid-cols-1 lg:grid-cols-3 gap-5">
                 <div className="form-control w-full ">
                   <label className="my-1">
                     <span className="label-text">Price</span>
@@ -66,6 +105,29 @@ const AddProduct = () => {
                     {errors.price?.type === "required" && (
                       <span className="label-text-alt text-red-500">
                         {errors.price.message}
+                      </span>
+                    )}
+                  </label>
+                </div>
+                <div className="form-control w-full ">
+                  <label className="my-1">
+                    <span className="label-text">Amount</span>
+                  </label>
+                  <input
+                    type="number"
+                    placeholder="Price/piece"
+                    className="input input-bordered w-full "
+                    {...register("available", {
+                      required: {
+                        value: true,
+                        message: "Set an amount",
+                      },
+                    })}
+                  />
+                  <label className="my-1">
+                    {errors.available?.type === "required" && (
+                      <span className="label-text-alt text-red-500">
+                        {errors.available.message}
                       </span>
                     )}
                   </label>
@@ -139,7 +201,7 @@ const AddProduct = () => {
                 </label>
               </div>
               <input
-                className="btn btn-primary mx-auto mt-2 shadow-xl  w-full  text-white"
+                className="btn btn-primary mx-auto mt-2 mb-4 shadow-xl  w-full  text-white"
                 type="submit"
                 value="Add Now"
               />
