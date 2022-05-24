@@ -6,6 +6,7 @@ import auth from "../../firebase.init";
 
 const PurchaseItem = () => {
   const [user] = useAuthState(auth);
+  console.log(user, "fkgnfkgd");
   const { id } = useParams();
   const [product, setProduct] = useState({});
   useEffect(() => {
@@ -95,16 +96,11 @@ const PurchaseItem = () => {
               </figure>
               <div class="card-body">
                 {/* <h2 class="card-title text-xl font-bold">{name}</h2> */}
-                <div>
-                  <p className="text-xl font-semibold my-2">
-                    Price :
-                    <span className="text-3xl font-bold text-primary">
-                      {" "}
-                      ${price}
-                    </span>
-                    / Piece
-                  </p>
-                </div>
+
+                <p className="text-lg font-semibold">
+                  Total Sell:{" "}
+                  <span className="text-purple-500">{totalSell}</span>
+                </p>
                 <div className="flex justify-between">
                   <p className="text-base font-semibold">
                     Available:{" "}
@@ -215,10 +211,16 @@ const PurchaseItem = () => {
                     />
                   </div>
                   <div className="col-span-6 sm:col-span-3">
-                    <p className="text-lg font-semibold">
-                      Total Sell:{" "}
-                      <span className="text-purple-500">{totalSell}</span>
-                    </p>
+                    <div>
+                      <p className="text-xl font-semibold my-2">
+                        Price :
+                        <span className="text-3xl font-bold text-primary">
+                          {" "}
+                          ${price}
+                        </span>
+                        / Piece
+                      </p>
+                    </div>
                   </div>
                 </div>
               </div>

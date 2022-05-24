@@ -39,10 +39,25 @@ const SignUp = () => {
   if (token) {
     navigate("/");
   }
+  const imageStorageKey = "fb945273156e5c66d0c7c83e4776688b";
 
   const onSubmit = async (data) => {
-    await createUserWithEmailAndPassword(data.email, data.password);
-    await updateProfile({ displayName: data.name });
+    const image = data.image[0];
+    const formData = new FormData();
+    formData.append("image", image);
+    const url = `https://api.imgbb.com/1/upload?key=${imageStorageKey}`;
+    fetch(url, {
+      method: "POST",
+      body: formData,
+    })
+      .then((res) => res.json())
+      .then(async (result) => {
+        if (result.success) {
+          const img = result.data.url;
+          await createUserWithEmailAndPassword(data.email, data.password);
+          await updateProfile({ displayName: data.name, photoURL: img });
+        }
+      });
   };
   return (
     <div>
@@ -139,7 +154,28 @@ const SignUp = () => {
                   )}
                 </label>
               </div>
-
+              <div className="form-control w-full max-w-xs">
+                <label className="label ">
+                  <span className="label-text">Photo</span>
+                </label>
+                <input
+                  type="file"
+                  className="input input-bordered w-full max-w-xs"
+                  {...register("image", {
+                    required: {
+                      value: true,
+                      message: "Image is Required",
+                    },
+                  })}
+                />
+                <label className="label">
+                  {errors.image?.type === "required" && (
+                    <span className="label-text-alt text-red-500">
+                      {errors.image.message}
+                    </span>
+                  )}
+                </label>
+              </div>
               {signInError}
               <input
                 className="btn btn-primary w-full max-w-xs text-white"
