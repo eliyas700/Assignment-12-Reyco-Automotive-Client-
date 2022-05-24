@@ -17,6 +17,7 @@ import AboutMe from "./Pages/Dashboard/AboutMe";
 import UpdateProfile from "./Pages/Dashboard/UpdateProfile";
 import ManageUsers from "./Pages/Dashboard/ManageUsers";
 import AddProduct from "./Pages/Dashboard/AddProduct";
+import ManageOrders from "./Pages/Dashboard/ManageOrders";
 function App() {
   return (
     <div>
@@ -66,6 +67,10 @@ function App() {
             element={<ManageUsers></ManageUsers>}
           ></Route>
           <Route path="addProduct" element={<AddProduct></AddProduct>}></Route>
+          <Route
+            path="manageOrders"
+            element={<ManageOrders></ManageOrders>}
+          ></Route>
           {/* <Route path="payment/:id" element={<Payment></Payment>}></Route> */}
         </Route>
       </Routes>

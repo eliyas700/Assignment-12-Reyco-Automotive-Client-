@@ -37,10 +37,13 @@ const UpdateProfile = () => {
   };
   return (
     <div>
-      <form onSubmit={handleSubmit(onSubmit)}>
+      <form
+        className="grid grid-cols-1 lg:grid-cols-2 justify-between "
+        onSubmit={handleSubmit(onSubmit)}
+      >
         <div className="my-2">
           <label>
-            <span>Name </span>
+            <span>Name{"  "}</span>
           </label>
           <input
             type="text"
@@ -62,7 +65,36 @@ const UpdateProfile = () => {
             )}
           </label>
         </div>
-
+        <div className="my-2">
+          <label>
+            <span>Relationship </span>
+          </label>
+          <input
+            type="text"
+            className="py-1 w-60 border-2"
+            {...register("relationship")}
+          />
+        </div>
+        <div className="my-2">
+          <label>
+            <span>Phone </span>
+          </label>
+          <input
+            type="text"
+            className="py-1 w-60 border-2"
+            {...register("phone")}
+          />
+        </div>
+        <div className="my-2">
+          <label>
+            <span>Educational </span>
+          </label>
+          <input
+            type="text"
+            className="py-1 w-60 border-2"
+            {...register("school")}
+          />
+        </div>
         <div className="my-2">
           <label>
             <span>Photo </span>
@@ -85,6 +117,17 @@ const UpdateProfile = () => {
             )}
           </label>
         </div>
+        <div className="my-2">
+          <label>
+            <span>Location </span>
+          </label>
+          <input
+            type="location"
+            className="py-1 w-60 border-2"
+            {...register("location", {})}
+          />
+        </div>
+
         <input
           type="submit"
           value="Update Now"

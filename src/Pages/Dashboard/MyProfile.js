@@ -9,7 +9,7 @@ const MyProfile = () => {
   const [admin, setAdmin] = useAdmin(user);
   return (
     <div>
-      <div class="card-container bg-gradient-to-t from-orange-500 to-yellow-500">
+      <div class="card-containers bg-gradient-to-t from-orange-500 to-yellow-500">
         <span class="pro text-[#B3B8CD] bg-primary ">
           {admin ? "admin" : "User"}
         </span>
