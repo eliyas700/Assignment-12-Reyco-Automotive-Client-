@@ -6,7 +6,7 @@ const ManageOrders = () => {
   const [orders, setOrders] = useState([]);
   const [deleteOrder, setDeleteOrder] = useState(null);
   useEffect(() => {
-    fetch("http://localhost:5000/orders", {
+    fetch("https://morning-wave-16762.herokuapp.com/orders", {
       headers: {
         authorization: `Bearer ${localStorage.getItem("accessToken")}`,
       },

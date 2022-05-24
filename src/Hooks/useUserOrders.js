@@ -10,12 +10,15 @@ const useUserOrders = () => {
   const navigate = useNavigate();
   useEffect(() => {
     if (user) {
-      fetch(`http://localhost:5000/orders?userEmail=${user.email}`, {
-        method: "GET",
-        headers: {
-          authorization: `Bearer ${localStorage.getItem("accessToken")}`,
-        },
-      })
+      fetch(
+        `https://morning-wave-16762.herokuapp.com/orders?userEmail=${user.email}`,
+        {
+          method: "GET",
+          headers: {
+            authorization: `Bearer ${localStorage.getItem("accessToken")}`,
+          },
+        }
+      )
         .then((res) => {
           if (res.status === 401 || res.status === 403) {
             signOut(auth);

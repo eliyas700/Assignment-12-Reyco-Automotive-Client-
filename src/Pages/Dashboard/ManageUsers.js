@@ -10,7 +10,7 @@ const ManageUsers = () => {
   //     data: users,
   //     refetch,
   //   } = useQuery("users", () =>
-  //     fetch("http://localhost:5000/user", {
+  //     fetch("https://morning-wave-16762.herokuapp.com/user", {
   //       method: "GET",
   //       headers: {
   //         authorization: `Bearer ${localStorage.getItem("accessToken")}`,
@@ -22,7 +22,7 @@ const ManageUsers = () => {
   //   }
   const [users, setUsers] = useState([]);
   useEffect(() => {
-    fetch("http://localhost:5000/user", {
+    fetch("https://morning-wave-16762.herokuapp.com/user", {
       method: "GET",
       headers: {
         authorization: `Bearer ${localStorage.getItem("accessToken")}`,

@@ -5,7 +5,7 @@ const MangeProducts = () => {
   const [products, setProducts] = useState([]);
   const [deleteProduct, setDeleteProduct] = useState(null);
   useEffect(() => {
-    fetch("http://localhost:5000/products", {
+    fetch("https://morning-wave-16762.herokuapp.com/products", {
       headers: {
         authorization: `Bearer ${localStorage.getItem("accessToken")}`,
       },

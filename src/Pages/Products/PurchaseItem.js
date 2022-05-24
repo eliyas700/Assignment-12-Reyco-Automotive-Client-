@@ -10,7 +10,7 @@ const PurchaseItem = () => {
   const { id } = useParams();
   const [product, setProduct] = useState({});
   useEffect(() => {
-    fetch(`http://localhost:5000/products/${id}`)
+    fetch(`https://morning-wave-16762.herokuapp.com/products/${id}`)
       .then((res) => res.json())
       .then((data) => setProduct(data));
   }, []);
@@ -51,7 +51,7 @@ const PurchaseItem = () => {
       user: userName,
       address: address,
     };
-    fetch("http://localhost:5000/orders", {
+    fetch("https://morning-wave-16762.herokuapp.com/orders", {
       method: "POST",
       headers: { "content-type": "application/json" },
       body: JSON.stringify(booking),

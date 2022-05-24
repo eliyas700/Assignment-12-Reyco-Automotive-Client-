@@ -35,7 +35,7 @@ const AddProduct = () => {
             img: img,
           };
           //Send Product To DataBase
-          fetch("http://localhost:5000/products", {
+          fetch("https://morning-wave-16762.herokuapp.com/products", {
             method: "POST",
             headers: {
               "content-type": "application/json",

@@ -21,7 +21,7 @@ const MyReview = () => {
       rating: rating,
       user: user?.email,
     };
-    fetch("http://localhost:5000/reviews", {
+    fetch("https://morning-wave-16762.herokuapp.com/reviews", {
       method: "POST",
       headers: { "content-type": "application/json" },
       body: JSON.stringify(review),
