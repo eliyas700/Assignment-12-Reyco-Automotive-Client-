@@ -1,35 +1,12 @@
-import { signOut } from "firebase/auth";
 import React, { useEffect, useState } from "react";
-import { useAuthState } from "react-firebase-hooks/auth";
 import { Link, useNavigate } from "react-router-dom";
-import auth from "../../../firebase.init";
 import useUserOrders from "../../../Hooks/useUserOrders";
+import UserDeleteOrderModal from "./UserDeleteOrderModal";
 
 const MyOrders = () => {
   const [orders, setOrders] = useUserOrders([]);
-  // const [orders, setOrders] = useState([]);
-  // const [user] = useAuthState(auth);
-  // const navigate = useNavigate();
-  // useEffect(() => {
-  //   if (user) {
-  //     fetch(`http://localhost:5000/orders?userEmail=${user.email}`, {
-  //       method: "GET",
-  //       headers: {
-  //         authorization: `Bearer ${localStorage.getItem("accessToken")}`,
-  //       },
-  //     })
-  //       .then((res) => {
-  //         if (res.status === 401 || res.status === 403) {
-  //           signOut(auth);
-  //           localStorage.removeItem("accessToken");
-  //           //Home
-  //           navigate("/");
-  //         }
-  //         return res.json();
-  //       })
-  //       .then((data) => setOrders(data));
-  //   }
-  // }, [user]);
+  const [deleteOrder, setDeleteOrder] = useState(null);
+  console.log(deleteOrder, " deleteOrder");
   return (
     <div>
       <div>
@@ -76,7 +53,13 @@ const MyOrders = () => {
                         >
                           Pay Now
                         </Link>
-                        <button className="btn btn-xs btn-error">Cancel</button>
+                        <label
+                          onClick={() => setDeleteOrder(a)}
+                          for="user-delete-order"
+                          className="btn  btn-xs btn-error modal-button"
+                        >
+                          Cancel Order
+                        </label>
                       </div>
                     )}
                     {/* {a.price && a.paid && (
@@ -101,6 +84,12 @@ const MyOrders = () => {
           </table>
         </div>
       </div>
+      {deleteOrder && (
+        <UserDeleteOrderModal
+          deleteOrder={deleteOrder}
+          setDeleteOrder={setDeleteOrder}
+        ></UserDeleteOrderModal>
+      )}
     </div>
   );
 };

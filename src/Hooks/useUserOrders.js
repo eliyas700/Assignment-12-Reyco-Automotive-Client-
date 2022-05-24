@@ -27,7 +27,7 @@ const useUserOrders = () => {
         })
         .then((data) => setOrders(data));
     }
-  }, [user]);
+  }, [user, orders]);
   return [orders, setOrders];
 };
 export default useUserOrders;
