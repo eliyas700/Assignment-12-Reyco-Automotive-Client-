@@ -16,11 +16,10 @@
 }
 
 .card-container .pro {
-    color: #231E39;
-    background-color: #FEBB0B;
+
     border-radius: 3px;
     font-size: 14px;
-    font-weight: bold;
+    font-weight: 400;
     padding: 3px 7px;
     position: absolute;
     top: 30px;

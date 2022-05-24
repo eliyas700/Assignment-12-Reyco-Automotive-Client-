@@ -3,7 +3,7 @@ import useProducts from "../../Hooks/useProducts";
 import Product from "./Product";
 
 const Products = () => {
-  const [products, setProducts] = useProducts([]);
+  const [products] = useProducts([]);
 
   return (
     <div className="w-[98%] mx-auto">

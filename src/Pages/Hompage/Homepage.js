@@ -9,7 +9,7 @@ import Specality from "../Speciality/Specality";
 import Offer from "../Offer/Offer";
 
 const Homepage = () => {
-  const [products, setProducts] = useProducts([]);
+  const [products] = useProducts([]);
   return (
     <div>
       <HomepageBanner></HomepageBanner>

@@ -2,13 +2,17 @@ import React from "react";
 import { useAuthState } from "react-firebase-hooks/auth";
 import { Link, Outlet } from "react-router-dom";
 import auth from "../../firebase.init";
+import useAdmin from "../../Hooks/useAdmin";
 import "./MyProfile.css";
 const MyProfile = () => {
   const [user] = useAuthState(auth);
+  const [admin, setAdmin] = useAdmin(user);
   return (
     <div>
       <div class="card-container bg-gradient-to-t from-orange-500 to-yellow-500">
-        <span class="pro">PRO</span>
+        <span class="pro text-[#B3B8CD] bg-primary ">
+          {admin ? "admin" : "User"}
+        </span>
         <img
           class="round block mx-auto w-48 h-48"
           src={user?.photoURL}
@@ -19,10 +23,10 @@ const MyProfile = () => {
         </h3>
 
         <div class="buttons">
-          <Link to="/dashboard/profile" class="btn btn-primary mr-3">
+          <Link to="/dashboard" class="btn btn-primary mr-3">
             About Me
           </Link>
-          <Link to="/dashboard/profile/update" class="btn btn-accent">
+          <Link to="/dashboard/update" class="btn btn-accent">
             Update Profile
           </Link>
         </div>
