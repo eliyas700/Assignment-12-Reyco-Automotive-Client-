@@ -7,7 +7,7 @@ const MyReview = () => {
   console.log(user);
   return (
     <div
-      className="py-20"
+      className="pt-10 pb-16"
       style={{
         backgroundImage:
           "url(" + "https://i.ibb.co/K2SMvBm/SL-031721-41490-35.jpg" + ")",
@@ -19,9 +19,20 @@ const MyReview = () => {
       <h2 className="text-center text-2xl font-bold py-5">
         Give Your Feedback
       </h2>
-      <div class="card w-96 glass mx-auto">
+      <div class="card w-96 glass mx-auto shadow-xl">
         <form className=" border-2 p-4">
-          <label htmlFor="review"></label>
+          <div>
+            <label htmlFor="country">Country</label>
+            <input
+              className="block my-2 border-2"
+              id="country"
+              type="text"
+              placeholder="Type Your Country Name"
+            />
+          </div>
+          <label className="my-2 block" htmlFor="review">
+            Comment
+          </label>
           <textarea
             name=""
             id="review"

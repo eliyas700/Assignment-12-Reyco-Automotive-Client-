@@ -3,7 +3,7 @@ import Rating from "react-rating";
 import { faStar } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 const Review = ({ review }) => {
-  const { name, description, rating, img } = review;
+  const { name, description, rating, img, country } = review;
   return (
     <div>
       <div class="card text-center bg-base-100 shadow-xl">
@@ -15,6 +15,7 @@ const Review = ({ review }) => {
             alt=""
           />
           <h2 class="text-xl font-bold">{name}</h2>
+          <p className="uppercase text-xs">{country}</p>
           <p>
             <Rating
               initialRating={rating}
