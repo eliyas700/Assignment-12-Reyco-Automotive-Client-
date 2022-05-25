@@ -10,7 +10,7 @@ const MyProfile = () => {
   return (
     <div>
       <div class="card-containers bg-gradient-to-t from-orange-500 to-yellow-500">
-        <span class="pro text-[#B3B8CD] bg-primary ">
+        <span class="pro text-[#B3B8CD] bg-primary rounded-full btn-sm ">
           {admin ? "admin" : "User"}
         </span>
         <img

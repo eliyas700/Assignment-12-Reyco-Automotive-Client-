@@ -1,12 +1,14 @@
 import React from "react";
 import { useAuthState } from "react-firebase-hooks/auth";
 import { useForm } from "react-hook-form";
+import { toast } from "react-toastify";
 import auth from "../../firebase.init";
 const AddMoreInfo = () => {
   const {
     register,
     formState: { errors },
     handleSubmit,
+    reset,
   } = useForm();
   const [user] = useAuthState(auth);
   const email = user?.email;
@@ -20,12 +22,12 @@ const AddMoreInfo = () => {
     })
       .then((res) => res.json())
       .then((data) => {
+        if (data.result.acknowledged) {
+          toast.success("Information Updated Successfully!");
+          reset();
+        }
         console.log(data, "dfgdgfd");
       });
-
-    console.log(data);
-    const birthdate = data.date;
-    const githib = data.github;
   };
   return (
     <div>
@@ -62,7 +64,7 @@ const AddMoreInfo = () => {
           </label>
           <input
             type="text"
-            className="py-1 w-60 border-2"
+            className="py-1 w-60 border-2 text-primary"
             {...register("Github")}
           />
         </div>
@@ -72,7 +74,7 @@ const AddMoreInfo = () => {
           </label>
           <input
             type="text"
-            className="py-1 w-60 border-2"
+            className="py-1 w-60 border-2 text-primary"
             {...register("phone")}
           />
         </div>
@@ -82,7 +84,7 @@ const AddMoreInfo = () => {
           </label>
           <input
             type="text"
-            className="py-1 w-60 border-2"
+            className="py-1 w-60 border-2 text-primary"
             {...register("school")}
           />
         </div>
@@ -92,7 +94,7 @@ const AddMoreInfo = () => {
           </label>
           <input
             type="text"
-            className="py-1 w-60 border-2"
+            className="py-1 w-60 border-2 text-primary"
             {...register("linkedin", {
               required: {
                 value: true,
@@ -114,7 +116,7 @@ const AddMoreInfo = () => {
           </label>
           <input
             type="location"
-            className="py-1 w-60 border-2"
+            className="py-1 w-60 border-2 text-primary"
             {...register("location", {})}
           />
         </div>
