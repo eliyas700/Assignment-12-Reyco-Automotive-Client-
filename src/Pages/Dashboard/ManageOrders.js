@@ -76,9 +76,24 @@ const ManageOrders = () => {
                     <span className="text-red-500">Unpaid</span>
                   ) : (
                     <span className="text-green-500">
-                      {order.status && order.payment
-                        ? "Shipped Successfully"
-                        : "Pending For Shipping"}
+                      {order.status && order.payment ? (
+                        "Shipped Successfully"
+                      ) : (
+                        <div className="flex">
+                          <span className="text-green-500">
+                            Paid{" "}
+                            <small className="block">
+                              TranxID: {order?.transactionId}
+                            </small>
+                          </span>
+                          <button
+                            className="btn btn-xs btn-primary"
+                            onClick={() => handleShipment(order._id)}
+                          >
+                            Shipment
+                          </button>
+                        </div>
+                      )}
                     </span>
                   )}
                 </td>
