@@ -21,7 +21,7 @@ const ManageOrders = () => {
     const payment = {
       status: "Shipped",
     };
-    fetch(`http://localhost:5000/ship/${_id}`, {
+    fetch(`https://morning-wave-16762.herokuapp.com/ship/${_id}`, {
       method: "PATCH",
       headers: {
         "content-type": "application/json",
@@ -34,7 +34,7 @@ const ManageOrders = () => {
         console.log(data);
       });
 
-    // fetch(`http://localhost:5000/orders/${_id}`, {
+    // fetch(`https://morning-wave-16762.herokuapp.com/orders/${_id}`, {
     //   method: "PUT",
     //   headers: {
     //     "content-type": "application/json",
