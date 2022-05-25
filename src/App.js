@@ -21,6 +21,7 @@ import ManageOrders from "./Pages/Dashboard/ManageOrders";
 import MangeProducts from "./Pages/Dashboard/MangeProducts";
 import Payment from "./Pages/Dashboard/Payment/Payment";
 import AddMoreInfo from "./Pages/Dashboard/AddMoreInfo";
+import NotFound from "./Pages/Shared/NotFound/NotFound";
 function App() {
   return (
     <div>
@@ -82,6 +83,7 @@ function App() {
           ></Route>
           {/* <Route path="payment/:id" element={<Payment></Payment>}></Route> */}
         </Route>
+        <Route path="*" element={<NotFound></NotFound>}></Route>
       </Routes>
       <Footer></Footer>
       <ToastContainer></ToastContainer>
