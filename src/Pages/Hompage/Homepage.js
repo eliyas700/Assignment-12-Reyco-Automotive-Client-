@@ -7,9 +7,10 @@ import Reason from "./Reason/Reason";
 import Reviews from "../Reviews/Reviews";
 import Specality from "../Speciality/Specality";
 import Offer from "../Offer/Offer";
+import Loading from "../Shared/Header/Loading/Loading";
 
 const Homepage = () => {
-  const [products] = useProducts([]);
+  const [products, isLoading] = useProducts([]);
   return (
     <div>
       <HomepageBanner></HomepageBanner>
@@ -21,14 +22,19 @@ const Homepage = () => {
           Parts Available
         </h3>
         <div className="w-[98%] mx-auto">
-          <div className="grid grid-cols-1 lg:grid-cols-3 gap-5">
-            {products
-              .slice(0, 6)
-              .reverse()
-              .map((product) => (
-                <Product key={product.id} product={product}></Product>
-              ))}
-          </div>
+          {isLoading ? (
+            <Loading></Loading>
+          ) : (
+            <div className="grid grid-cols-1 lg:grid-cols-3 gap-5">
+              {products
+                .slice(0)
+                .reverse()
+                .slice(0, 6)
+                .map((product) => (
+                  <Product key={product.id} product={product}></Product>
+                ))}
+            </div>
+          )}
         </div>
 
         <div className="mx-auto text-right block">

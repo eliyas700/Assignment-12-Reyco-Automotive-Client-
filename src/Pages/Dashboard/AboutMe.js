@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from "react";
 import { useAuthState } from "react-firebase-hooks/auth";
-import { useQuery } from "react-query";
 import auth from "../../firebase.init";
 import useAdmin from "../../Hooks/useAdmin";
 import useUserOrders from "../../Hooks/useUserOrders";
@@ -45,11 +44,6 @@ const AboutMe = () => {
         <li>Phone: {exactUser?.phone || "Not Found"}</li>
         <li>GitHub: {exactUser?.Github || "Not Found"}</li>
         <li>LinkedIn: {exactUser?.linkedin || "Not Found"}</li>
-        {/* 
-        <li>Birth Date : {date ? date : "Not Found"}</li>
-        <li>School: {school ? school : "Not Found"}</li>
-        <li>Contact: {phone ? phone : "Not Found"}</li>
-        <li>Git Hub :{Github ? Github : "Not Found"}</li> */}
       </ul>
     </div>
   );
