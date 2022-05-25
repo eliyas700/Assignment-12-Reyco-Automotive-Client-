@@ -20,6 +20,7 @@ import AddProduct from "./Pages/Dashboard/AddProduct";
 import ManageOrders from "./Pages/Dashboard/ManageOrders";
 import MangeProducts from "./Pages/Dashboard/MangeProducts";
 import Payment from "./Pages/Dashboard/Payment/Payment";
+import AddMoreInfo from "./Pages/Dashboard/AddMoreInfo";
 function App() {
   return (
     <div>
@@ -60,6 +61,10 @@ function App() {
             <Route
               path="update"
               element={<UpdateProfile></UpdateProfile>}
+            ></Route>
+            <Route
+              path="moreInfo"
+              element={<AddMoreInfo></AddMoreInfo>}
             ></Route>
           </Route>
           <Route

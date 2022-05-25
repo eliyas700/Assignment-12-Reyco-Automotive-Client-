@@ -65,36 +65,7 @@ const UpdateProfile = () => {
             )}
           </label>
         </div>
-        <div className="my-2">
-          <label>
-            <span>Relationship </span>
-          </label>
-          <input
-            type="text"
-            className="py-1 w-60 border-2"
-            {...register("relationship")}
-          />
-        </div>
-        <div className="my-2">
-          <label>
-            <span>Phone </span>
-          </label>
-          <input
-            type="text"
-            className="py-1 w-60 border-2"
-            {...register("phone")}
-          />
-        </div>
-        <div className="my-2">
-          <label>
-            <span>Educational </span>
-          </label>
-          <input
-            type="text"
-            className="py-1 w-60 border-2"
-            {...register("school")}
-          />
-        </div>
+
         <div className="my-2">
           <label>
             <span>Photo </span>
@@ -117,16 +88,6 @@ const UpdateProfile = () => {
             )}
           </label>
         </div>
-        <div className="my-2">
-          <label>
-            <span>Location </span>
-          </label>
-          <input
-            type="location"
-            className="py-1 w-60 border-2"
-            {...register("location", {})}
-          />
-        </div>
 
         <input
           type="submit"
@@ -134,28 +95,6 @@ const UpdateProfile = () => {
           className="btn-sm ml-48 my-2 btn-secondary"
         />
       </form>
-      {/* <form onSubmit={handleSubmit}>
-        <div className="my-2">
-          <label htmlFor="name">Name: </label>
-          <input
-            className="py-1 w-60"
-            defaultValue={user?.displayName}
-            type="text"
-            id="name"
-            name="name"
-          />
-        </div>
-        <div className="my-2 mt-3">
-          <label htmlFor="photo">Photo: </label>
-          <input
-            type="file"
-            className="border-2 w-60"
-            name="photo"
-            id="photo"
-          />
-        </div>
-        
-      </form> */}
     </div>
   );
 };

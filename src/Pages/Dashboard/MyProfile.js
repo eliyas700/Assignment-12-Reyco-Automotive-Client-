@@ -26,8 +26,11 @@ const MyProfile = () => {
           <Link to="/dashboard" class="btn btn-primary mr-3">
             About Me
           </Link>
-          <Link to="/dashboard/update" class="btn btn-accent">
+          <Link to="/dashboard/profile/update" class="btn btn-accent mr-3">
             Update Profile
+          </Link>
+          <Link to="/dashboard/profile/moreInfo" class="btn btn-secondary">
+            Add More Info
           </Link>
         </div>
         <div class="skills">

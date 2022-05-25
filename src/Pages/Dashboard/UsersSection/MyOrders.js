@@ -62,7 +62,7 @@ const MyOrders = () => {
                         </label>
                       </div>
                     )}
-                    {/* {a.price && a.paid && (
+                    {a.payment === "paid" && (
                       <div>
                         <p>
                           <span className="text-success">Paid</span>
@@ -76,7 +76,7 @@ const MyOrders = () => {
                           </small>
                         </p>
                       </div>
-                    )} */}
+                    )}
                   </td>
                 </tr>
               ))}

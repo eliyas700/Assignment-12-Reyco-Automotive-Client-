@@ -53,7 +53,7 @@ const ManageOrders = () => {
                       Cancel Order
                     </label>
                   ) : (
-                    <button className="btn-xs btn-primary">CShipment</button>
+                    <button className="btn-xs btn-primary">Shipment</button>
                   )}
                 </td>
               </tr>
