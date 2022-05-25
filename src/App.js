@@ -19,6 +19,7 @@ import ManageUsers from "./Pages/Dashboard/ManageUsers";
 import AddProduct from "./Pages/Dashboard/AddProduct";
 import ManageOrders from "./Pages/Dashboard/ManageOrders";
 import MangeProducts from "./Pages/Dashboard/MangeProducts";
+import Payment from "./Pages/Dashboard/Payment/Payment";
 function App() {
   return (
     <div>
@@ -50,10 +51,8 @@ function App() {
               path="update"
               element={<UpdateProfile></UpdateProfile>}
             ></Route>
-            {/*
-            
-             */}
           </Route>
+          <Route path="payment/:id" element={<Payment></Payment>}></Route>
           <Route path="orders" element={<MyOrders></MyOrders>}></Route>
           <Route path="review" element={<MyReview></MyReview>}></Route>
           <Route path="profile" element={<MyProfile></MyProfile>}>
