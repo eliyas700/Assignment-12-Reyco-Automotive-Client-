@@ -5,6 +5,7 @@ import {
   useStripe,
   useElements,
 } from "@stripe/react-stripe-js";
+import { toast } from "react-toastify";
 
 const CheckoutForm = ({ order }) => {
   const stripe = useStripe();
@@ -89,6 +90,7 @@ const CheckoutForm = ({ order }) => {
       })
         .then((res) => res.json())
         .then((data) => {
+          toast.success("Payment Successfully Completed");
           console.log(data);
         });
     }

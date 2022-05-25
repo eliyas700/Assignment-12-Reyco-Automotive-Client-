@@ -1,5 +1,6 @@
 import React from "react";
 import { useEffect, useState } from "react";
+import { toast } from "react-toastify";
 import DeleteOrderModal from "./DeleteOrderModal";
 
 const ManageOrders = () => {
@@ -14,6 +15,40 @@ const ManageOrders = () => {
       .then((res) => res.json())
       .then((data) => setOrders(data));
   }, [orders]);
+
+  const handleShipment = (_id) => {
+    console.log(_id);
+    const payment = {
+      status: "Shipped",
+    };
+    fetch(`http://localhost:5000/ship/${_id}`, {
+      method: "PATCH",
+      headers: {
+        "content-type": "application/json",
+        authorization: `Bearer ${localStorage.getItem("accessToken")}`,
+      },
+      body: JSON.stringify(payment),
+    })
+      .then((res) => res.json())
+      .then((data) => {
+        console.log(data);
+      });
+
+    // fetch(`http://localhost:5000/orders/${_id}`, {
+    //   method: "PUT",
+    //   headers: {
+    //     "content-type": "application/json",
+    //   },
+    //   body: JSON.stringify(payment),
+    // })
+    //   .then((res) => res.json())
+    //   .then((data) => {
+    //     if (data.result.acknowledged) {
+    //       toast.success("Product Successfully!");
+    //     }
+    //     console.log(data, "dfgdgfd");
+    //   });
+  };
 
   return (
     <div>
@@ -40,11 +75,15 @@ const ManageOrders = () => {
                   {order.payment === "unpaid" ? (
                     <span className="text-red-500">Unpaid</span>
                   ) : (
-                    <span className="text-green-500">Paid</span>
+                    <span className="text-green-500">
+                      {order.status && order.payment
+                        ? "Shipped Successfully"
+                        : "Pending For Shipping"}
+                    </span>
                   )}
                 </td>
                 <td>
-                  {order.payment === "unpaid" ? (
+                  {order.payment === "unpaid" && (
                     <label
                       onClick={() => setDeleteOrder(order)}
                       for="delete-doctor-modal"
@@ -52,8 +91,6 @@ const ManageOrders = () => {
                     >
                       Cancel Order
                     </label>
-                  ) : (
-                    <button className="btn-xs btn-primary">Shipment</button>
                   )}
                 </td>
               </tr>

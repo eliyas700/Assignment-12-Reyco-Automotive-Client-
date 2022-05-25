@@ -59,7 +59,9 @@ const PurchaseItem = () => {
       .then((res) => res.json())
       .then((data) => {
         if (data.success) {
-          toast(`Your  Order For ${quantity} pieces ${name}  is Confirmed`);
+          toast.success(
+            `Your  Order For ${quantity} pieces ${name}  is Confirmed`
+          );
         } else {
           toast.error(
             `Sorry You already Booked this Orders,Pay that order Now`

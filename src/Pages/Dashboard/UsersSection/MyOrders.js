@@ -6,7 +6,7 @@ import UserDeleteOrderModal from "./UserDeleteOrderModal";
 const MyOrders = () => {
   const [orders, setOrders] = useUserOrders([]);
   const [deleteOrder, setDeleteOrder] = useState(null);
-  console.log(deleteOrder, " deleteOrder");
+  console.log(orders, " deleteOrder");
   return (
     <div>
       <div>
@@ -45,7 +45,7 @@ const MyOrders = () => {
                   <td>{a.quantity}</td>
                   <td>${a.quantity * a.price}</td>
                   <td>
-                    {a.payment === "unpaid" && (
+                    {a?.payment == "unpaid" && (
                       <div className="flex justify-between">
                         <Link
                           to={`/dashboard/payment/${a._id}`}
@@ -62,10 +62,15 @@ const MyOrders = () => {
                         </label>
                       </div>
                     )}
-                    {a.payment === "paid" && (
+                    {a.payment === "paid" && !a.status && (
                       <div>
                         <p>
-                          <span className="text-success">Paid</span>
+                          <span className="text-success">
+                            Paid{" "}
+                            <small className="text-primary">
+                              (Waiting For Shipment)
+                            </small>
+                          </span>
                         </p>
                         <p>
                           <small>
@@ -76,6 +81,11 @@ const MyOrders = () => {
                           </small>
                         </p>
                       </div>
+                    )}
+                    {a.payment === "paid" && a.status && (
+                      <span className="text-green-500">
+                        Product Shipped Successfully
+                      </span>
                     )}
                   </td>
                 </tr>

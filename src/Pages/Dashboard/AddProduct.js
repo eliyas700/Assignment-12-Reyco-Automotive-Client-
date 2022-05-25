@@ -30,7 +30,7 @@ const AddProduct = () => {
             price: data.price,
             minOrder: data.minQuantity,
             available: data.available,
-            payment: "Unpaid",
+            payment: "unpaid",
             totalSell: 0,
             img: img,
           };
