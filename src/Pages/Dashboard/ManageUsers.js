@@ -4,33 +4,33 @@ import Loading from "../Shared/Header/Loading/Loading";
 import ManageUsersRow from "./ManageUsersRow";
 
 const ManageUsers = () => {
-  //   const {
-  //     isLoading,
-  //     error,
-  //     data: users,
-  //     refetch,
-  //   } = useQuery("users", () =>
-  //     fetch("https://morning-wave-16762.herokuapp.com/user", {
-  //       method: "GET",
-  //       headers: {
-  //         authorization: `Bearer ${localStorage.getItem("accessToken")}`,
-  //       },
-  //     }).then((res) => res.json())
-  //   );
-  //   if (isLoading) {
-  //     return <Loading></Loading>;
-  //   }
-  const [users, setUsers] = useState([]);
-  useEffect(() => {
+  const {
+    isLoading,
+    error,
+    data: users,
+    refetch,
+  } = useQuery("users", () =>
     fetch("https://morning-wave-16762.herokuapp.com/user", {
       method: "GET",
       headers: {
         authorization: `Bearer ${localStorage.getItem("accessToken")}`,
       },
-    })
-      .then((res) => res.json())
-      .then((data) => setUsers(data));
-  }, []);
+    }).then((res) => res.json())
+  );
+  if (isLoading) {
+    return <Loading></Loading>;
+  }
+  // const [users, setUsers] = useState([]);
+  // useEffect(() => {
+  //   fetch("https://morning-wave-16762.herokuapp.com/user", {
+  //     method: "GET",
+  //     headers: {
+  //       authorization: `Bearer ${localStorage.getItem("accessToken")}`,
+  //     },
+  //   })
+  //     .then((res) => res.json())
+  //     .then((data) => setUsers(data));
+  // }, []);
   return (
     <div>
       <h4>This is From users section:{users?.length} </h4>
@@ -50,6 +50,7 @@ const ManageUsers = () => {
                 key={user._id}
                 index={index}
                 user={user}
+                refetch={refetch}
               ></ManageUsersRow>
             ))}
           </tbody>

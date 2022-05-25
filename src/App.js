@@ -24,6 +24,7 @@ import AddMoreInfo from "./Pages/Dashboard/AddMoreInfo";
 import NotFound from "./Pages/Shared/NotFound/NotFound";
 import MyPortfolio from "./Pages/MyPortfolio/MyPortfolio";
 import Blog from "./Pages/Blog/Blog";
+import Contact from "./Pages/ContactUs/Contact";
 function App() {
   return (
     <div>
@@ -89,6 +90,7 @@ function App() {
           element={<MyPortfolio></MyPortfolio>}
         ></Route>
         <Route path="/blog" element={<Blog></Blog>}></Route>
+        <Route path="/contact" element={<Contact></Contact>}></Route>
         <Route path="*" element={<NotFound></NotFound>}></Route>
       </Routes>
       <Footer></Footer>

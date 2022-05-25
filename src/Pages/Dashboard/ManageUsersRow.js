@@ -1,8 +1,10 @@
-import React from "react";
+import React, { useState } from "react";
 import { toast } from "react-toastify";
+import DeleteUserModal from "./DeleteUserModal";
 
-const ManageUsersRow = ({ user, index }) => {
+const ManageUsersRow = ({ user, index, refetch }) => {
   const { email } = user;
+  const [deleteUser, setDeleteUser] = useState(null);
   const makeAdmin = () => {
     fetch(`https://morning-wave-16762.herokuapp.com/user/admin/${email}`, {
       method: "PUT",
@@ -19,26 +21,41 @@ const ManageUsersRow = ({ user, index }) => {
       .then((data) => {
         if (data.modifiedCount > 0) {
           toast.success("Successfully Promoted as As An Admin ");
-          //   refetch();
+          refetch();
         }
       });
   };
   console.log(user);
   return (
-    <tr>
-      <th>{index + 1}</th>
-      <td>{user.email}</td>
-      <td>
-        {user?.role !== "admin" && (
-          <button onClick={makeAdmin} className="btn btn-xs">
-            Make Admin
-          </button>
-        )}
-      </td>
-      <td>
-        <button className="btn btn-xs bg-red-500">Remove User</button>
-      </td>
-    </tr>
+    <>
+      <tr>
+        <th>{index + 1}</th>
+        <td>{user.email}</td>
+        <td>
+          {user?.role !== "admin" && (
+            <button onClick={makeAdmin} className="btn btn-xs">
+              Make Admin
+            </button>
+          )}
+        </td>
+        <td>
+          <label
+            onClick={() => setDeleteUser(user)}
+            for="delete-user-modal"
+            className="btn  btn-xs btn-error modal-button"
+          >
+            Remove User
+          </label>
+        </td>
+      </tr>
+      {deleteUser && (
+        <DeleteUserModal
+          deleteUser={deleteUser}
+          refetch={refetch}
+          setDeleteUser={setDeleteUser}
+        ></DeleteUserModal>
+      )}
+    </>
   );
 };
 
