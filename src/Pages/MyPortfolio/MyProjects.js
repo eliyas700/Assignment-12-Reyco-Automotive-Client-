@@ -3,8 +3,8 @@ import { Link } from "react-router-dom";
 
 const MyProjects = () => {
   return (
-    <div className="grid grid-cols-1 lg:grid-cols-3 gap-5">
-      <div className="card w-96 bg-base-100 shadow-lg image-full">
+    <div className="grid grid-cols-1 my-3 lg:grid-cols-3 gap-5">
+      <div className="card w-96 bg-base-100 shadow-lg mx-auto image-full">
         <figure>
           <img src="https://i.ibb.co/VQYQVY3/Screenshot-388.png" alt="Shoes" />
         </figure>
@@ -25,7 +25,7 @@ const MyProjects = () => {
           </div>
         </div>
       </div>
-      <div className="card w-96 bg-base-100 shadow-xl image-full">
+      <div className="card w-96 bg-base-100 shadow-xl mx-auto  image-full">
         <figure>
           <img src="https://i.ibb.co/LCtbwdB/Screenshot-389.png" alt="Shoes" />
         </figure>
@@ -44,7 +44,7 @@ const MyProjects = () => {
           </div>
         </div>
       </div>
-      <div className="card w-96 bg-base-100 shadow-xl image-full">
+      <div className="card w-96 bg-base-100 shadow-xl mx-auto  image-full">
         <figure>
           <img src="https://i.ibb.co/xFZ5zMc/Screenshot-387.png" alt="Shoes" />
         </figure>

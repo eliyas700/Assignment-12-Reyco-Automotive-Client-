@@ -35,7 +35,7 @@ const MyOrders = () => {
         })
         .then((data) => setOrders(data));
     }
-  }, [user]);
+  }, [user, deleteOrder]);
 
   return (
     <>

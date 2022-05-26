@@ -94,7 +94,7 @@ const Header = () => {
           <ul
             style={{ right: "0" }}
             tabIndex="0"
-            className="menu  menu-compact dropdown-content mt-3 p-2 shadow bg-base-100 rounded-box w-52"
+            className="menu  menu-compact dropdown-content mt-3 p-2 shadow bg-gradient-to-r from-orange-500 to-yellow-500 opacity-5 rounded-box w-52"
           >
             {menuItems}
           </ul>

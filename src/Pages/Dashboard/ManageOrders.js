@@ -64,6 +64,9 @@ const ManageOrders = () => {
                       </small>
                     </span>
                   )}
+                  {order?.status && order?.payment === "paid" && (
+                    <span className="text-green-500">Shipped Successfully</span>
+                  )}
                   {order.payment === "unpaid" && (
                     <span className="text-red-500">Unpaid</span>
                   )}
@@ -82,7 +85,6 @@ const ManageOrders = () => {
 
                   {
                     <span className="text-green-500">
-                      {order.status && order.payment && "Shipped Successfully"}
                       {!order.status && order.payment === "paid" && (
                         <div>
                           <button
