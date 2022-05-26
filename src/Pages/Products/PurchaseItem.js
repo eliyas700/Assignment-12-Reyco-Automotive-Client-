@@ -79,7 +79,7 @@ const PurchaseItem = () => {
     if (quantity < minOrder) {
       setQuan(true);
       toast.warning("Please,Increase Your Order Quantity");
-    } else if (quantity > available) {
+    } else if (quantity > parseInt(available)) {
       setQuan(true);
       toast.warning("Sorry! We Dont Have Sufficient Products Now");
     } else {
