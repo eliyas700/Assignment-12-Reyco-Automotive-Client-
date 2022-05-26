@@ -3,29 +3,30 @@ import { Link } from "react-router-dom";
 import { signOut } from "firebase/auth";
 import { useAuthState } from "react-firebase-hooks/auth";
 import auth from "../../../firebase.init";
+import CustomLink from "../CustomLink/CustomLink";
 const Header = () => {
   const [user] = useAuthState(auth);
 
   const menuItems = (
     <>
       <li className="text-lg  font-semibold">
-        <Link to="/">Home</Link>
+        <CustomLink to="/">Home</CustomLink>
       </li>
       <li className="text-lg font-semibold" tabIndex="0">
-        <Link to="/blog">Blogs</Link>
+        <CustomLink to="/blog">Blogs</CustomLink>
       </li>
       <li className="text-lg font-semibold">
-        <Link to="/products">Products</Link>
+        <CustomLink to="/products">Products</CustomLink>
       </li>
       <li className="text-lg font-semibold">
-        <Link to="/myPortfolio">My Portfolio</Link>
+        <CustomLink to="/myPortfolio">My Portfolio</CustomLink>
       </li>
       <li className="text-lg font-semibold">
-        <Link to="/contact">Contact Us</Link>
+        <CustomLink to="/contact">Contact Us</CustomLink>
       </li>
       {user && (
         <li className="text-lg font-semibold">
-          <Link to="/dashboard">Dashboard</Link>
+          <CustomLink to="/dashboard">Dashboard</CustomLink>
         </li>
       )}
       {user ? (
@@ -50,7 +51,7 @@ const Header = () => {
         </li>
       ) : (
         <li className="text-lg font-semibold">
-          <Link to="/login">Login</Link>
+          <CustomLink to="/login">Login</CustomLink>
         </li>
       )}
     </>
@@ -59,7 +60,7 @@ const Header = () => {
     <>
       <div className="flex justify-between sticky top-0 z-50 px-3 bg-gradient-to-r from-orange-500 to-yellow-500">
         <div className="navbar-start">
-          <Link
+          <CustomLink
             to="/"
             className="btn btn-ghost normal-case text-[18px] font-sans"
           >
@@ -68,7 +69,7 @@ const Header = () => {
               src="https://i.ibb.co/VC53b2C/Reyco-logo.png"
               alt="Reyco-Automotive"
             />
-          </Link>
+          </CustomLink>
         </div>
         <div className="navbar-center hidden lg:flex">
           <ul className="menu menu-horizontal p-0">{menuItems}</ul>

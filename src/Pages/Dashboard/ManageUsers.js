@@ -20,20 +20,9 @@ const ManageUsers = () => {
   if (isLoading) {
     return <Loading></Loading>;
   }
-  // const [users, setUsers] = useState([]);
-  // useEffect(() => {
-  //   fetch("https://morning-wave-16762.herokuapp.com/user", {
-  //     method: "GET",
-  //     headers: {
-  //       authorization: `Bearer ${localStorage.getItem("accessToken")}`,
-  //     },
-  //   })
-  //     .then((res) => res.json())
-  //     .then((data) => setUsers(data));
-  // }, []);
+
   return (
     <div>
-      <h4>This is From users section:{users?.length} </h4>
       <div className="overflow-x-auto">
         <table className="table w-full">
           <thead>

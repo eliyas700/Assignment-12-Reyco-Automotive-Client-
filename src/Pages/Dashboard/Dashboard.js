@@ -3,6 +3,7 @@ import { useAuthState } from "react-firebase-hooks/auth";
 import { Link, Outlet } from "react-router-dom";
 import auth from "../../firebase.init";
 import useAdmin from "../../Hooks/useAdmin";
+import CustomLink from "../Shared/CustomLink/CustomLink";
 const Dashboard = () => {
   const [user] = useAuthState(auth);
   const [admin, setAdmin] = useAdmin(user);
@@ -48,31 +49,39 @@ const Dashboard = () => {
               {admin ? "Admin" : "User"}
             </li>
             <li>
-              <Link to="/dashboard">My Profile</Link>
+              <CustomLink to="/dashboard">My Profile</CustomLink>
             </li>
             {!admin && (
               <>
                 <li>
-                  <Link to="/dashboard/orders">My Orders</Link>
+                  <CustomLink to="/dashboard/orders">My Orders</CustomLink>
                 </li>
                 <li>
-                  <Link to="/dashboard/review">Add Review</Link>
+                  <CustomLink to="/dashboard/review">Add Review</CustomLink>
                 </li>
               </>
             )}
             {admin && (
               <>
                 <li>
-                  <Link to="/dashboard/manageUsers">Manage Users</Link>
+                  <CustomLink to="/dashboard/manageUsers">
+                    Manage Users
+                  </CustomLink>
                 </li>
                 <li>
-                  <Link to="/dashboard/addProduct">Add Product</Link>
+                  <CustomLink to="/dashboard/addProduct">
+                    Add Product
+                  </CustomLink>
                 </li>
                 <li>
-                  <Link to="/dashboard/manageOrders">Manage Orders</Link>
+                  <CustomLink to="/dashboard/manageOrders">
+                    Manage Orders
+                  </CustomLink>
                 </li>
                 <li>
-                  <Link to="/dashboard/manageProducts">Manage Products</Link>
+                  <CustomLink to="/dashboard/manageProducts">
+                    Manage Products
+                  </CustomLink>
                 </li>
               </>
             )}

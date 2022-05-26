@@ -15,7 +15,6 @@ const MangeProducts = () => {
   }, [products]);
   return (
     <div>
-      <h2>{products.length}</h2>
       <div>
         <div className="overflow-x-auto">
           <table className="table w-full">
