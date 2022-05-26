@@ -10,10 +10,10 @@ const SocialLogin = () => {
 
   const navigate = useNavigate();
   const location = useLocation();
-
   let from = location.state?.from?.pathname || "/";
+
   if (token) {
-    navigate("/");
+    navigate(from, { replace: true });
   }
   if (loading) {
     return <Loading></Loading>;

@@ -1,3 +1,4 @@
+import { signOut } from "firebase/auth";
 import React, { useEffect, useState } from "react";
 import { useAuthState } from "react-firebase-hooks/auth";
 import { Link, useNavigate } from "react-router-dom";
@@ -7,10 +8,34 @@ import useUserOrders from "../../../Hooks/useUserOrders";
 import UserDeleteOrderModal from "./UserDeleteOrderModal";
 
 const MyOrders = () => {
-  const [orders, setOrders] = useUserOrders([]);
+  const [orders, setOrders] = useState([]);
   const [deleteOrder, setDeleteOrder] = useState(null);
   const [user] = useAuthState(auth);
   const [admin, setAdmin] = useAdmin(user);
+  const navigate = useNavigate();
+  useEffect(() => {
+    if (user) {
+      fetch(
+        `https://morning-wave-16762.herokuapp.com/order?userEmail=${user.email}`,
+        {
+          method: "GET",
+          headers: {
+            authorization: `Bearer ${localStorage.getItem("accessToken")}`,
+          },
+        }
+      )
+        .then((res) => {
+          if (res.status === 401 || res.status === 403) {
+            signOut(auth);
+            localStorage.removeItem("accessToken");
+            //Home
+            navigate("/");
+          }
+          return res.json();
+        })
+        .then((data) => setOrders(data));
+    }
+  }, [user]);
 
   return (
     <>

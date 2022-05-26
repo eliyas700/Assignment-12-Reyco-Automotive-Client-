@@ -21,7 +21,7 @@ const AboutMe = () => {
       .then((data) => setUsers(data));
   }, []);
   const exactUser = users.find((user) => user.email === email);
-
+  const userOrders = orders.filter((order) => order.userEmail === email);
   return (
     <div>
       <h3>
@@ -33,7 +33,7 @@ const AboutMe = () => {
       {!admin && (
         <h3>
           Total Order Placed:
-          <span className="font-semibold">{orders?.length}</span>
+          <span className="font-semibold">{userOrders?.length}</span>
         </h3>
       )}
       <ul className="grid grid-cols-3 gap-3">

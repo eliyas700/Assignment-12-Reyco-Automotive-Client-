@@ -4,7 +4,7 @@ import {
   useUpdateProfile,
 } from "react-firebase-hooks/auth";
 import { useForm } from "react-hook-form";
-import { Link, useNavigate } from "react-router-dom";
+import { Link, useNavigate, useLocation } from "react-router-dom";
 import SocialLogin from "../Authentication/SocialLogin";
 import auth from "../../firebase.init";
 import Loading from "../Shared/Header/Loading/Loading";
@@ -21,7 +21,7 @@ const SignUp = () => {
     useCreateUserWithEmailAndPassword(auth);
   const [token] = useToken(user);
   const [updateProfile, updating, updateError] = useUpdateProfile(auth);
-
+  const location = useLocation();
   const navigate = useNavigate();
   let signInError;
 
@@ -37,8 +37,10 @@ const SignUp = () => {
     );
   }
 
+  let from = location.state?.from?.pathname || "/";
+
   if (token) {
-    navigate("/");
+    navigate(from, { replace: true });
   }
   const imageStorageKey = "fb945273156e5c66d0c7c83e4776688b";
 
