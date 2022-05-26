@@ -26,7 +26,6 @@ const AddMoreInfo = () => {
           toast.success("Information Updated Successfully!");
           reset();
         }
-        console.log(data, "dfgdgfd");
       });
   };
   return (

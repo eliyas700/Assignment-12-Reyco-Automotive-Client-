@@ -5,7 +5,7 @@ import { useAuthState } from "react-firebase-hooks/auth";
 import auth from "../../../firebase.init";
 const Header = () => {
   const [user] = useAuthState(auth);
-  console.log(user);
+
   const menuItems = (
     <>
       <li className="text-lg  font-semibold">
@@ -36,8 +36,8 @@ const Header = () => {
           >
             <span title={user?.email}>
               {user?.photoURL ? (
-                <div class="avatar online">
-                  <div class="w-12 rounded-full">
+                <div className="avatar online">
+                  <div className="w-12 rounded-full">
                     <img src={user.photoURL} alt={user.displayName} />
                   </div>
                 </div>

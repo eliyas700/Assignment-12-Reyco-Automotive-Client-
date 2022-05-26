@@ -3,7 +3,7 @@ import React from "react";
 const Specality = () => {
   return (
     <div className="grid grid-cols-2 lg:grid-cols-4 mx-6">
-      <div class="card card-side  bg-base-100 ">
+      <div className="card card-side  bg-base-100 ">
         <figure>
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -54,12 +54,12 @@ const Specality = () => {
             ></path>
           </svg>
         </figure>
-        <div class="card-body text-accent">
-          <h2 class="card-title">Fre Shipping </h2>
+        <div className="card-body text-accent">
+          <h2 className="card-title">Fre Shipping </h2>
           <p>For orders from $12000</p>
         </div>
       </div>
-      <div class="card card-side bg-base-100 ">
+      <div className="card card-side bg-base-100 ">
         <figure>
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -110,12 +110,12 @@ const Specality = () => {
             ></path>
           </svg>
         </figure>
-        <div class="card-body text-accent">
-          <h2 class="card-title">Support 24/7 </h2>
+        <div className="card-body text-accent">
+          <h2 className="card-title">Support 24/7 </h2>
           <p>Call Us anytime +11212122323</p>
         </div>
       </div>
-      <div class="card card-side bg-base-100 ">
+      <div className="card card-side bg-base-100 ">
         <figure>
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -158,12 +158,12 @@ const Specality = () => {
             ></path>
           </svg>
         </figure>
-        <div class="card-body text-accent">
-          <h2 class="card-title">100% Safety </h2>
+        <div className="card-body text-accent">
+          <h2 className="card-title">100% Safety </h2>
           <p>Only Secure Payments</p>
         </div>
       </div>
-      <div class="card card-side bg-base-100 ">
+      <div className="card card-side bg-base-100 ">
         <figure>
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -201,8 +201,8 @@ const Specality = () => {
             ></path>
           </svg>
         </figure>
-        <div class="card-body text-accent">
-          <h2 class="card-title">Hot offers </h2>
+        <div className="card-body text-accent">
+          <h2 className="card-title">Hot offers </h2>
           <p>Get Discount Up to 30%</p>
         </div>
       </div>

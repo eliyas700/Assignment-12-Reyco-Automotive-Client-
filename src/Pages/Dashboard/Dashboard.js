@@ -6,7 +6,7 @@ import useAdmin from "../../Hooks/useAdmin";
 const Dashboard = () => {
   const [user] = useAuthState(auth);
   const [admin, setAdmin] = useAdmin(user);
-  console.log(admin, "Admin");
+
   return (
     <>
       <div className="navbar-end  lg:hidden">
@@ -40,9 +40,9 @@ const Dashboard = () => {
           </h2>
           <Outlet></Outlet>
         </div>
-        <div className="drawer-side">
+        <div className="drawer-side lg:h-auto ">
           <label htmlFor="my-drawer-2" className="drawer-overlay"></label>
-          <ul className="menu p-4 overflow-y-auto w-48 lg:w-60 bg-primary  text-neutral">
+          <ul className="menu p-4 w-48 lg:w-48 bg-primary  text-neutral ">
             {/* <!-- Sidebar content here --> */}
             <li className="text-xl font-semibold text-warning">
               {admin ? "Admin" : "User"}

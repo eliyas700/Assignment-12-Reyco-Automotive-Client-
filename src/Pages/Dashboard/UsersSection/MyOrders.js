@@ -6,7 +6,7 @@ import UserDeleteOrderModal from "./UserDeleteOrderModal";
 const MyOrders = () => {
   const [orders, setOrders] = useUserOrders([]);
   const [deleteOrder, setDeleteOrder] = useState(null);
-  console.log(orders, " deleteOrder");
+
   return (
     <div>
       <div>
@@ -34,8 +34,8 @@ const MyOrders = () => {
                 <tr key={a._id}>
                   <th>{index + 1}</th>
                   <th>
-                    <div class="avatar">
-                      <div class="w-8 rounded">
+                    <div className="avatar">
+                      <div className="w-8 rounded">
                         <img src={a.img} alt={a.name} />
                       </div>
                     </div>
@@ -55,7 +55,7 @@ const MyOrders = () => {
                         </Link>
                         <label
                           onClick={() => setDeleteOrder(a)}
-                          for="user-delete-order"
+                          htmlFor="user-delete-order"
                           className="btn  btn-xs btn-error modal-button"
                         >
                           Cancel Order

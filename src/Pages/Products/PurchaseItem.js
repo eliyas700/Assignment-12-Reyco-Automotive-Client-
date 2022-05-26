@@ -3,10 +3,12 @@ import { useAuthState } from "react-firebase-hooks/auth";
 import { useParams } from "react-router-dom";
 import { toast } from "react-toastify";
 import auth from "../../firebase.init";
+import useAdmin from "../../Hooks/useAdmin";
 
 const PurchaseItem = () => {
   const [user] = useAuthState(auth);
-  console.log(user, "fkgnfkgd");
+  const [admin, setAdmin] = useAdmin(user);
+
   const { id } = useParams();
   const [product, setProduct] = useState({});
   useEffect(() => {
@@ -68,7 +70,6 @@ const PurchaseItem = () => {
           );
         }
       });
-    console.log(name, quantity, address, phone, email);
   };
 
   // Button Toggle On Condition
@@ -84,20 +85,19 @@ const PurchaseItem = () => {
     } else {
       setQuan(false);
     }
-    console.log(quantity);
   };
   return (
-    <div class="mt-10 sm:mt-0 mx-2">
+    <div className="mt-10 sm:mt-0 mx-2">
       <h3 className="text-4xl my-5 font-bold text-primary">{name}</h3>
-      <div class="md:grid md:grid-cols-5 md:gap-6">
-        <div class="md:col-span-2">
-          <div class="px-4 sm:px-0">
-            <div class="card card-compact ">
+      <div className="md:grid md:grid-cols-5 md:gap-6">
+        <div className="md:col-span-2">
+          <div className="px-4 sm:px-0">
+            <div className="card card-compact ">
               <figure>
                 <img style={{ maxWidth: "60%" }} src={img} alt={name} />
               </figure>
-              <div class="card-body">
-                {/* <h2 class="card-title text-xl font-bold">{name}</h2> */}
+              <div className="card-body">
+                {/* <h2 className="card-title text-xl font-bold">{name}</h2> */}
 
                 <p className="text-lg font-semibold">
                   Total Sell:{" "}
@@ -122,15 +122,15 @@ const PurchaseItem = () => {
             </div>
           </div>
         </div>
-        <div class="mt-5 md:mt-0 md:col-span-3">
+        <div className="mt-5 md:mt-0 md:col-span-3">
           <form onSubmit={handleSubmit}>
-            <div class="overflow-hidden sm:rounded-md">
-              <div class="px-4 py-5 bg-white sm:p-6">
-                <div class="grid grid-cols-6 gap-6">
-                  <div class="col-span-6 sm:col-span-3">
+            <div className="overflow-hidden sm:rounded-md">
+              <div className="px-4 py-5 bg-white sm:p-6">
+                <div className="grid grid-cols-6 gap-6">
+                  <div className="col-span-6 sm:col-span-3">
                     <label
-                      for="name"
-                      class="block text-sm font-medium text-gray-700"
+                      htmlFor="name"
+                      className="block text-sm font-medium text-gray-700"
                     >
                       Name
                     </label>
@@ -139,14 +139,14 @@ const PurchaseItem = () => {
                       name="name"
                       id="name"
                       defaultValue={user?.displayName}
-                      class="mt-1 block w-full py-2 px-3 border border-gray-300 bg-white rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
+                      className="mt-1 block w-full py-2 px-3 border border-gray-300 bg-white rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
                     />
                   </div>
 
-                  <div class="col-span-6 sm:col-span-3">
+                  <div className="col-span-6 sm:col-span-3">
                     <label
-                      for="email_address"
-                      class="block text-sm font-medium text-gray-700"
+                      htmlFor="email_address"
+                      className="block text-sm font-medium text-gray-700"
                     >
                       Email address
                     </label>
@@ -156,16 +156,16 @@ const PurchaseItem = () => {
                       id="email_address"
                       defaultValue={user.email}
                       readOnly
-                      autocomplete="email"
-                      class="mt-1 block w-full py-2 px-3 border border-gray-300 bg-white rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
+                      autoComplete="email"
+                      className="mt-1 block w-full py-2 px-3 border border-gray-300 bg-white rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
                     />
                   </div>
 
-                  <div class="col-span-6 sm:col-span-3">
+                  <div className="col-span-6 sm:col-span-3">
                     <label
-                      for="phone"
+                      htmlFor="phone"
                       required
-                      class="block text-sm font-medium text-gray-700"
+                      className="block text-sm font-medium text-gray-700"
                     >
                       Phone
                     </label>
@@ -175,14 +175,14 @@ const PurchaseItem = () => {
                       id="phone"
                       required
                       placeholder="Type Your Phone Number"
-                      class="mt-1 block w-full py-2 px-3 border border-gray-300 bg-white rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
+                      className="mt-1 block w-full py-2 px-3 border border-gray-300 bg-white rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
                     />
                   </div>
-                  <div class="col-span-6 sm:col-span-3">
+                  <div className="col-span-6 sm:col-span-3">
                     <label
-                      for="address"
+                      htmlFor="address"
                       required
-                      class="block text-sm font-medium text-gray-700"
+                      className="block text-sm font-medium text-gray-700"
                     >
                       Address
                     </label>
@@ -191,14 +191,14 @@ const PurchaseItem = () => {
                       id="address"
                       required
                       placeholder="Type Your Address"
-                      class="mt-1 block w-full py-2 px-3 border border-gray-300 bg-white rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
+                      className="mt-1 block w-full py-2 px-3 border border-gray-300 bg-white rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
                     />
                   </div>
 
-                  <div class="col-span-6 sm:col-span-3">
+                  <div className="col-span-6 sm:col-span-3">
                     <label
-                      for="quantity"
-                      class="block text-sm font-medium text-gray-700"
+                      htmlFor="quantity"
+                      className="block text-sm font-medium text-gray-700"
                     >
                       Quantity
                     </label>
@@ -209,7 +209,7 @@ const PurchaseItem = () => {
                       // onChange={(e) => this.setState({ value: e.target.value })}
                       defaultValue={minOrder}
                       id="quantity"
-                      class="mt-1 block w-30 py-2 px-3 border border-gray-300 bg-white rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
+                      className="mt-1 block w-30 py-2 px-3 border border-gray-300 bg-white rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
                     />
                   </div>
                   <div className="col-span-6 sm:col-span-3">
@@ -226,20 +226,26 @@ const PurchaseItem = () => {
                   </div>
                 </div>
               </div>
-              <div class="px-4 py-3 bg-gray-50 text-right sm:px-6">
-                <button
-                  type="submit"
-                  disabled={quan}
-                  // disabled={!this.state.value}
-                  class={`inline-flex justify-center py-2 px-4 border border-transparent shadow-sm text-sm font-medium rounded-md text-white 
+              <div className="px-4 py-3 bg-gray-50 text-right sm:px-6">
+                {admin ? (
+                  <p className="text-xl font-semibold text-red-500">
+                    Purchase is Available For Users only Not For Admin{" "}
+                  </p>
+                ) : (
+                  <button
+                    type="submit"
+                    disabled={quan}
+                    // disabled={!this.state.value}
+                    className={`inline-flex justify-center py-2 px-4 border border-transparent shadow-sm text-sm font-medium rounded-md text-white 
                     ${
                       !quan
                         ? "bg-indigo-600 hover:bg-indigo-700"
                         : "bg-indigo-200"
                     }`}
-                >
-                  Place Order
-                </button>
+                  >
+                    Place Order
+                  </button>
+                )}
               </div>
             </div>
           </form>

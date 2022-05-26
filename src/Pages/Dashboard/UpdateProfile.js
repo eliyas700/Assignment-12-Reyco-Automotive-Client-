@@ -26,7 +26,6 @@ const UpdateProfile = () => {
     })
       .then((res) => res.json())
       .then((result) => {
-        console.log(result);
         if (result.success) {
           const img = result.data.url;
           updateProfile({ displayName: data.name, photoURL: img });

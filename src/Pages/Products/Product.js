@@ -19,12 +19,12 @@ const Product = ({ product }) => {
   };
   return (
     <div>
-      <div class="card card-side   bg-base-100 shadow-xl">
+      <div className="card card-side   bg-base-100 shadow-xl">
         <figure className="w-48 h-60">
           <img src={img} alt={name} />
         </figure>
-        <div class="card-body p-2">
-          <h2 class="card-title  text-xl">{name}</h2>
+        <div className="card-body p-2">
+          <h2 className="card-title  text-xl">{name}</h2>
           <p title={description} className="text-[14px] text-[#7f8c8d]">
             {description.slice(0, 90) + "..."}
           </p>
@@ -42,10 +42,10 @@ const Product = ({ product }) => {
               <span className="font-semibold text-warning">{minOrder}</span>
             </p>
           </div>
-          <div class="card-actions justify-end">
+          <div className="card-actions justify-end">
             <button
               onClick={() => handlePurchase(_id)}
-              class="btn btn-primary  btn-sm"
+              className="btn btn-primary  btn-sm"
             >
               Buy Now
             </button>

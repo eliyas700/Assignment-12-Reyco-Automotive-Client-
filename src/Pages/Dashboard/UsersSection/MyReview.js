@@ -7,7 +7,7 @@ import auth from "../../../firebase.init";
 const MyReview = () => {
   const [user] = useAuthState(auth);
   const [exceed, setExceed] = useState(false);
-  console.log(user);
+
   const handleSubmitReview = (event) => {
     event.preventDefault();
     const country = event.target.country.value;
@@ -28,7 +28,6 @@ const MyReview = () => {
     })
       .then((res) => res.json())
       .then((data) => {
-        console.log(data);
         if (data.acknowledged) {
           toast.success(`Thank You For your Feedback`);
           event.target.reset();
@@ -60,7 +59,7 @@ const MyReview = () => {
       <h2 className="text-center text-2xl font-bold py-5">
         Give Your Feedback
       </h2>
-      <div class="card w-96 glass mx-auto shadow-xl">
+      <div className="card w-96 glass mx-auto shadow-xl">
         <form onSubmit={handleSubmitReview} className=" border-2 p-4">
           <div>
             <label htmlFor="country">Country</label>
@@ -96,7 +95,7 @@ const MyReview = () => {
           <input
             type="submit"
             disabled={exceed}
-            class={`inline-flex justify-center py-2 px-4 border border-transparent shadow-sm text-sm font-medium rounded-md text-white 
+            className={`inline-flex justify-center py-2 px-4 border border-transparent shadow-sm text-sm font-medium rounded-md text-white 
                     ${
                       !exceed
                         ? "bg-indigo-600 hover:bg-indigo-700"

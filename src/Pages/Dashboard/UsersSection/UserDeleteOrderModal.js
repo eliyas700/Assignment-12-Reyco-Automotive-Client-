@@ -3,7 +3,6 @@ import { toast } from "react-toastify";
 
 const UserDeleteOrderModal = ({ deleteOrder, setDeleteOrder }) => {
   const handleDelete = (id) => {
-    console.log(id);
     fetch(`https://morning-wave-16762.herokuapp.com/orders/${id}`, {
       method: "DELETE",
       headers: {
@@ -36,7 +35,7 @@ const UserDeleteOrderModal = ({ deleteOrder, setDeleteOrder }) => {
             >
               Confirm
             </button>
-            <label for="user-delete-order" className="btn btn-xs">
+            <label htmlFor="user-delete-order" className="btn btn-xs">
               Close
             </label>
           </div>

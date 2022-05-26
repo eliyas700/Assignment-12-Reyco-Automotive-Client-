@@ -9,12 +9,12 @@ const MyProfile = () => {
   const [admin, setAdmin] = useAdmin(user);
   return (
     <div>
-      <div class="card-containers bg-gradient-to-t from-orange-500 to-yellow-500">
-        <span class="pro text-[#B3B8CD] bg-primary rounded-full btn-sm ">
+      <div className="card-containers bg-gradient-to-t from-orange-500 to-yellow-500">
+        <span className="pro text-[#B3B8CD] bg-primary rounded-full btn-sm ">
           {admin ? "admin" : "User"}
         </span>
         <img
-          class="round block mx-auto w-48 h-48"
+          className="round block mx-auto w-48 h-48"
           src={user?.photoURL}
           alt="user"
         />
@@ -22,18 +22,18 @@ const MyProfile = () => {
           {user?.displayName}
         </h3>
 
-        <div class="buttons">
-          <Link to="/dashboard" class="btn btn-primary mr-3">
+        <div className="buttons">
+          <Link to="/dashboard" className="btn btn-primary mr-3">
             About Me
           </Link>
-          <Link to="/dashboard/profile/update" class="btn btn-accent mr-3">
+          <Link to="/dashboard/profile/update" className="btn btn-accent mr-3">
             Update Profile
           </Link>
-          <Link to="/dashboard/profile/moreInfo" class="btn btn-secondary">
+          <Link to="/dashboard/profile/moreInfo" className="btn btn-secondary">
             Add More Info
           </Link>
         </div>
-        <div class="skills">
+        <div className="skills">
           <Outlet></Outlet>
         </div>
       </div>

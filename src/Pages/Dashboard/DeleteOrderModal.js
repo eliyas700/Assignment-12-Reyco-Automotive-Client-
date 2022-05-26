@@ -39,7 +39,7 @@ const DeleteOrderModal = ({ deleteOrder, setDeleteOrder }) => {
             >
               Confirm
             </button>
-            <label for="delete-doctor-modal" className="btn btn-xs">
+            <label htmlFor="delete-doctor-modal" className="btn btn-xs">
               Close
             </label>
           </div>

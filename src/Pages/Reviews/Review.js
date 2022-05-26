@@ -6,15 +6,15 @@ const Review = ({ review }) => {
   const { name, description, rating, img, country } = review;
   return (
     <div>
-      <div class="card text-center bg-base-100 shadow-xl">
-        <div class="card-body">
+      <div className="card text-center bg-base-100 shadow-xl">
+        <div className="card-body">
           <img
             width={"100px"}
             className="rounded-full  mx-auto"
             src={img}
             alt=""
           />
-          <h2 class="text-xl font-bold">{name}</h2>
+          <h2 className="text-xl font-bold">{name}</h2>
           <p className="uppercase text-xs">{country}</p>
           <p>
             <Rating

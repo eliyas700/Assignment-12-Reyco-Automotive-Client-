@@ -52,7 +52,6 @@ const CheckoutForm = ({ order }) => {
     });
 
     if (error) {
-      console.log("[error]", error);
       setCardError(error.message);
     } else {
       setCardError("");

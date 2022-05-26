@@ -25,7 +25,7 @@ const ManageUsersRow = ({ user, index, refetch }) => {
         }
       });
   };
-  console.log(user);
+
   return (
     <>
       <tr>
@@ -41,7 +41,7 @@ const ManageUsersRow = ({ user, index, refetch }) => {
         <td>
           <label
             onClick={() => setDeleteUser(user)}
-            for="delete-user-modal"
+            htmlFor="delete-user-modal"
             className="btn  btn-xs btn-error modal-button"
           >
             Remove User

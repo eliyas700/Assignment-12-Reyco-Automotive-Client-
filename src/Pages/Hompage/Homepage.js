@@ -31,7 +31,7 @@ const Homepage = () => {
                 .reverse()
                 .slice(0, 6)
                 .map((product) => (
-                  <Product key={product.id} product={product}></Product>
+                  <Product key={product._id} product={product}></Product>
                 ))}
             </div>
           )}
@@ -41,7 +41,7 @@ const Homepage = () => {
           <Link
             to="/products"
             style={{ textDecoration: "none" }}
-            class="btn my-5  mr-auto text-2xl btn-active btn-link"
+            className="btn my-5  mr-auto text-2xl btn-active btn-link"
           >
             See More Items
             <svg

@@ -17,8 +17,8 @@ const MangeProducts = () => {
     <div>
       <h2>{products.length}</h2>
       <div>
-        <div class="overflow-x-auto">
-          <table class="table w-full">
+        <div className="overflow-x-auto">
+          <table className="table w-full">
             <thead>
               <tr>
                 <th></th>
@@ -36,8 +36,8 @@ const MangeProducts = () => {
                 <tr key={p._id}>
                   <th>{index + 1}</th>
                   <td>
-                    <div class="avatar">
-                      <div class="w-8 rounded">
+                    <div className="avatar">
+                      <div className="w-8 rounded">
                         <img src={p?.img} alt="img" />
                       </div>
                     </div>
@@ -50,7 +50,7 @@ const MangeProducts = () => {
                   <td>
                     <label
                       onClick={() => setDeleteProduct(p)}
-                      for="delete-manage-product"
+                      htmlFor="delete-manage-product"
                       className="btn  btn-xs btn-error modal-button"
                     >
                       Remove

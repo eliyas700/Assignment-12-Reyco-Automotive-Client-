@@ -22,7 +22,7 @@ const Blog = () => {
             </AccordionItemButton>
           </AccordionItemHeading>
           <AccordionItemPanel>
-            <p>
+            <div>
               <span className="font-semibold">
                 Some Tips and Tricks for Improving React Application Performance
                 are as Follows :
@@ -59,7 +59,7 @@ const Blog = () => {
                   CSS Animations Instead of JS Animations
                 </li>
               </ol>
-            </p>
+            </div>
           </AccordionItemPanel>
         </AccordionItem>
         <AccordionItem>

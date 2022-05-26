@@ -17,7 +17,6 @@ const ManageOrders = () => {
   }, [orders]);
 
   const handleShipment = (_id) => {
-    console.log(_id);
     const payment = {
       status: "Shipped",
     };
@@ -33,27 +32,12 @@ const ManageOrders = () => {
       .then((data) => {
         console.log(data);
       });
-
-    // fetch(`https://morning-wave-16762.herokuapp.com/orders/${_id}`, {
-    //   method: "PUT",
-    //   headers: {
-    //     "content-type": "application/json",
-    //   },
-    //   body: JSON.stringify(payment),
-    // })
-    //   .then((res) => res.json())
-    //   .then((data) => {
-    //     if (data.result.acknowledged) {
-    //       toast.success("Product Successfully!");
-    //     }
-    //     console.log(data, "dfgdgfd");
-    //   });
   };
 
   return (
     <div>
-      <div class="overflow-x-auto">
-        <table class="table w-full">
+      <div className="overflow-x-auto">
+        <table className="table w-full">
           <thead>
             <tr>
               <th></th>
@@ -72,20 +56,35 @@ const ManageOrders = () => {
                 <td>{order?.name}</td>
                 <td>{order?.quantity}</td>
                 <td>
-                  {order.payment === "unpaid" ? (
-                    <span className="text-red-500">Unpaid</span>
-                  ) : (
+                  {order.payment === "paid" && !order.status && (
                     <span className="text-green-500">
-                      {order.status && order.payment ? (
-                        "Shipped Successfully"
-                      ) : (
-                        <div className="flex">
-                          <span className="text-green-500">
-                            Paid{" "}
-                            <small className="block">
-                              TranxID: {order?.transactionId}
-                            </small>
-                          </span>
+                      Paid{" "}
+                      <small className="block">
+                        TranxID: {order?.transactionId}
+                      </small>
+                    </span>
+                  )}
+                  {order.payment === "unpaid" && (
+                    <span className="text-red-500">Unpaid</span>
+                  )}
+                </td>
+
+                <td>
+                  {order.payment === "unpaid" && !order.status && (
+                    <label
+                      onClick={() => setDeleteOrder(order)}
+                      htmlFor="delete-doctor-modal"
+                      className="btn  btn-xs btn-error modal-button"
+                    >
+                      Cancel Order
+                    </label>
+                  )}
+
+                  {
+                    <span className="text-green-500">
+                      {order.status && order.payment && "Shipped Successfully"}
+                      {!order.status && order.payment === "paid" && (
+                        <div>
                           <button
                             className="btn btn-xs btn-primary"
                             onClick={() => handleShipment(order._id)}
@@ -95,18 +94,7 @@ const ManageOrders = () => {
                         </div>
                       )}
                     </span>
-                  )}
-                </td>
-                <td>
-                  {order.payment === "unpaid" && (
-                    <label
-                      onClick={() => setDeleteOrder(order)}
-                      for="delete-doctor-modal"
-                      className="btn  btn-xs btn-error modal-button"
-                    >
-                      Cancel Order
-                    </label>
-                  )}
+                  }
                 </td>
               </tr>
             ))}
