@@ -1,0 +1,74 @@
+.scrollTop {
+    position: fixed;
+    width: 44px;
+    height: 44px;
+    bottom: 50px;
+    left: 90%;
+    border-radius: 44px;
+    align-items: right;
+    justify-content: end;
+    z-index: 1000;
+    cursor: pointer;
+    animation: fadeIn 0.3s;
+    transition: opacity 0.4s;
+    opacity: 0.5;
+}
+
+.contact {
+    background-color: transparent !important;
+    position: fixed;
+    bottom: 30%;
+    box-sizing: border-box !important;
+    outline: none !important;
+    left: 88%;
+    border: none !important;
+    z-index: 1000;
+    cursor: pointer;
+    animation: fadeIn 0.3s;
+    transition: opacity 0.4s;
+    opacity: 0.7;
+}
+
+.contact img {
+    /* background-color: transparent !important; */
+    width: 45px;
+    height: 45px;
+}
+
+.contact:hover {
+    opacity: 1;
+}
+
+.scrollTop:hover {
+    opacity: 1;
+}
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 0.5;
+    }
+}
+
+.contact {
+    background-color: transparent !important;
+}
+
+.contact img {
+    /* background-color: transparent !important; */
+    width: 45px;
+    height: 45px;
+}
+
+@keyframes App-logo-spin {
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
+}

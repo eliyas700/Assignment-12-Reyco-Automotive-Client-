@@ -26,6 +26,7 @@ import MyPortfolio from "./Pages/MyPortfolio/MyPortfolio";
 import Blog from "./Pages/Blog/Blog";
 import Contact from "./Pages/ContactUs/Contact";
 import RequireAdmin from "./Pages/Authentication/RequireAdmin";
+import ScrollUp from "./Pages/ScrollTop/ScrollUp";
 function App() {
   return (
     <div>
@@ -113,6 +114,7 @@ function App() {
         <Route path="/contact" element={<Contact></Contact>}></Route>
         <Route path="*" element={<NotFound></NotFound>}></Route>
       </Routes>
+      <ScrollUp></ScrollUp>
       <Footer></Footer>
       <ToastContainer></ToastContainer>
     </div>
