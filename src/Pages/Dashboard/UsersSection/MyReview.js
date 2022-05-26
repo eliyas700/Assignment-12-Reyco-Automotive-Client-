@@ -3,11 +3,12 @@ import React, { useState } from "react";
 import { useAuthState } from "react-firebase-hooks/auth";
 import { toast } from "react-toastify";
 import auth from "../../../firebase.init";
-
+import useAdmin from "../../../Hooks/useAdmin";
 const MyReview = () => {
   const [user] = useAuthState(auth);
   const [exceed, setExceed] = useState(false);
 
+  const [admin, setAdmin] = useAdmin(user);
   const handleSubmitReview = (event) => {
     event.preventDefault();
     const country = event.target.country.value;
@@ -46,66 +47,70 @@ const MyReview = () => {
     }
   };
   return (
-    <div
-      className="pt-10 pb-16"
-      style={{
-        backgroundImage:
-          "url(" + "https://i.ibb.co/K2SMvBm/SL-031721-41490-35.jpg" + ")",
-        backgroundPosition: "center",
-        backgroundSize: "cover",
-        backgroundRepeat: "no-repeat",
-      }}
-    >
-      <h2 className="text-center text-2xl font-bold py-5">
-        Give Your Feedback
-      </h2>
-      <div className="card w-96 glass mx-auto shadow-xl">
-        <form onSubmit={handleSubmitReview} className=" border-2 p-4">
-          <div>
-            <label htmlFor="country">Country</label>
-            <input
-              className="block my-2 border-2"
-              id="country"
-              type="text"
-              name="country"
-              placeholder="Type Your Country Name"
-            />
-          </div>
-          <div>
-            <label htmlFor="rating">Rating</label>
-            <input
-              className="block my-2 border-2"
-              id="rating"
-              type="text"
-              name="rating"
-              onBlur={handleRating}
-              placeholder="Rate Us"
-            />
-          </div>
-          <label className="my-2 block" htmlFor="review">
-            Comment
-          </label>
-          <textarea
-            id="review"
-            cols="45"
-            name="description"
-            placeholder="Type Your Message"
-            rows="5"
-          ></textarea>
-          <input
-            type="submit"
-            disabled={exceed}
-            className={`inline-flex justify-center py-2 px-4 border border-transparent shadow-sm text-sm font-medium rounded-md text-white 
+    <>
+      {!admin && (
+        <div
+          className="pt-10 pb-16"
+          style={{
+            backgroundImage:
+              "url(" + "https://i.ibb.co/K2SMvBm/SL-031721-41490-35.jpg" + ")",
+            backgroundPosition: "center",
+            backgroundSize: "cover",
+            backgroundRepeat: "no-repeat",
+          }}
+        >
+          <h2 className="text-center text-2xl font-bold py-5">
+            Give Your Feedback
+          </h2>
+          <div className="card w-96 glass mx-auto shadow-xl">
+            <form onSubmit={handleSubmitReview} className=" border-2 p-4">
+              <div>
+                <label htmlFor="country">Country</label>
+                <input
+                  className="block my-2 border-2"
+                  id="country"
+                  type="text"
+                  name="country"
+                  placeholder="Type Your Country Name"
+                />
+              </div>
+              <div>
+                <label htmlFor="rating">Rating</label>
+                <input
+                  className="block my-2 border-2"
+                  id="rating"
+                  type="text"
+                  name="rating"
+                  onBlur={handleRating}
+                  placeholder="Rate Us"
+                />
+              </div>
+              <label className="my-2 block" htmlFor="review">
+                Comment
+              </label>
+              <textarea
+                id="review"
+                cols="45"
+                name="description"
+                placeholder="Type Your Message"
+                rows="5"
+              ></textarea>
+              <input
+                type="submit"
+                disabled={exceed}
+                className={`inline-flex justify-center py-2 px-4 border border-transparent shadow-sm text-sm font-medium rounded-md text-white 
                     ${
                       !exceed
                         ? "bg-indigo-600 hover:bg-indigo-700"
                         : "bg-indigo-200"
                     }`}
-            value="Post Now"
-          />
-        </form>
-      </div>
-    </div>
+                value="Post Now"
+              />
+            </form>
+          </div>
+        </div>
+      )}
+    </>
   );
 };
 

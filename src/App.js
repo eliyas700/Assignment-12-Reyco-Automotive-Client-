@@ -25,6 +25,7 @@ import NotFound from "./Pages/Shared/NotFound/NotFound";
 import MyPortfolio from "./Pages/MyPortfolio/MyPortfolio";
 import Blog from "./Pages/Blog/Blog";
 import Contact from "./Pages/ContactUs/Contact";
+import RequireAdmin from "./Pages/Authentication/RequireAdmin";
 function App() {
   return (
     <div>
@@ -73,16 +74,35 @@ function App() {
           </Route>
           <Route
             path="manageUsers"
-            element={<ManageUsers></ManageUsers>}
+            element={
+              <RequireAdmin>
+                <ManageUsers></ManageUsers>
+              </RequireAdmin>
+            }
           ></Route>
-          <Route path="addProduct" element={<AddProduct></AddProduct>}></Route>
+          <Route
+            path="addProduct"
+            element={
+              <RequireAdmin>
+                <AddProduct></AddProduct>
+              </RequireAdmin>
+            }
+          ></Route>
           <Route
             path="manageOrders"
-            element={<ManageOrders></ManageOrders>}
+            element={
+              <RequireAdmin>
+                <ManageOrders></ManageOrders>
+              </RequireAdmin>
+            }
           ></Route>
           <Route
             path="manageProducts"
-            element={<MangeProducts></MangeProducts>}
+            element={
+              <RequireAdmin>
+                <MangeProducts></MangeProducts>
+              </RequireAdmin>
+            }
           ></Route>
         </Route>
         <Route

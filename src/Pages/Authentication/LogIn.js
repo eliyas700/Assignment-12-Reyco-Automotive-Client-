@@ -6,6 +6,7 @@ import auth from "../../firebase.init";
 import Loading from "../Shared/Header/Loading/Loading";
 import SocialLogin from "./SocialLogin";
 import useToken from "../../Hooks/useToken";
+import { toast } from "react-toastify";
 const LogIn = () => {
   const {
     register,
@@ -20,11 +21,6 @@ const LogIn = () => {
   const location = useLocation();
   let from = location.state?.from?.pathname || "/";
 
-  // useEffect(() => {
-  //   if (user) {
-  //     navigate(from, { replace: true });
-  //   }
-  // }, [from, navigate]);
   if (token) {
     navigate(from, { replace: true });
   }
@@ -41,6 +37,7 @@ const LogIn = () => {
   }
   const onSubmit = (data) => {
     signInWithEmailAndPassword(data.email, data.password);
+    toast.success("Welcome Back ! Have Fun");
   };
   return (
     <div>

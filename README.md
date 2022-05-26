@@ -1,6 +1,6 @@
 # Let's Talk About My Project `Reyco Automotive`
 
-let's Have a Look [Reyco Automotive](https://gadget-world-624e5.web.app/).
+let's Have a Look [Reyco Automotive](https://reyco-automotive.web.app/).
 
 ### `Client Site `
 
@@ -10,7 +10,7 @@ Client Site Repository Link: [Git-Hub](https://github.com/programming-hero-web-c
 
 Server Site Repository Link: [Git-Hub](https://github.com/programming-hero-web-course1/manufacturer-website-server-side-eliyas700)
 
-Live-Site-Link:[]()
+Live-Site-Link:[https://reyco-automotive.web.app/](https://reyco-automotive.web.app/)
 
 Author: [Eliyas Hossain](https://www.linkedin.com/in/eliyas-hossain-55867b82/)
 

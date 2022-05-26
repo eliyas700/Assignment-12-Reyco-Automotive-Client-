@@ -9,6 +9,7 @@ import SocialLogin from "../Authentication/SocialLogin";
 import auth from "../../firebase.init";
 import Loading from "../Shared/Header/Loading/Loading";
 import useToken from "../../Hooks/useToken";
+import { toast } from "react-toastify";
 const SignUp = () => {
   const {
     register,
@@ -56,6 +57,7 @@ const SignUp = () => {
           const img = result.data.url;
           await createUserWithEmailAndPassword(data.email, data.password);
           await updateProfile({ displayName: data.name, photoURL: img });
+          toast.success("Congratulations! Account Created Successfully");
         }
       });
   };
