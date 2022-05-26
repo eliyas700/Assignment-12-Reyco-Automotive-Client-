@@ -18,7 +18,14 @@ const Homepage = () => {
         <div>
           <Specality></Specality>
         </div>
-        <h3 className="text-3xl font-bold text-secondary text-center font-serif my-10">
+        <h3
+          data-aos="flip-left"
+          data-aos-offset="200"
+          data-aos-delay="50"
+          data-aos-duration="1000"
+          data-aos-easing="ease-in-out"
+          className="text-3xl font-bold text-secondary text-center font-serif my-10"
+        >
           Parts Available
         </h3>
         <div className="w-[98%] mx-auto">
@@ -39,6 +46,11 @@ const Homepage = () => {
 
         <div className="mx-auto text-right block">
           <Link
+            data-aos="fade-left"
+            data-aos-offset="200"
+            data-aos-delay="50"
+            data-aos-duration="1000"
+            data-aos-easing="ease-in-out"
             to="/products"
             style={{ textDecoration: "none" }}
             className="btn my-5  mr-auto text-2xl btn-active btn-link"
@@ -65,13 +77,27 @@ const Homepage = () => {
         <Offer></Offer>
       </div>
       <div>
-        <h3 className="text-3xl font-bold text-secondary text-center font-serif my-3">
+        <h3
+          data-aos="zoom-in-up"
+          data-aos-offset="200"
+          data-aos-delay="50"
+          data-aos-duration="1000"
+          data-aos-easing="ease-in-out"
+          className="text-3xl font-bold text-secondary text-center font-serif my-3"
+        >
           Why Us ?
         </h3>
         <Reason></Reason>
       </div>
       <div>
-        <h3 className="text-3xl font-bold text-secondary text-center font-serif my-12">
+        <h3
+          data-aos="zoom-in-up"
+          data-aos-offset="200"
+          data-aos-delay="50"
+          data-aos-duration="1000"
+          data-aos-easing="ease-in-out"
+          className="text-3xl font-bold text-secondary text-center font-serif my-12"
+        >
           What our Clients Say
         </h3>
         <Reviews></Reviews>

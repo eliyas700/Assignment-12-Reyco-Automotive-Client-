@@ -14,6 +14,11 @@ const MyProfile = () => {
           {admin ? "admin" : "User"}
         </span>
         <img
+          data-aos="zoom-in-up"
+          data-aos-offset="200"
+          data-aos-delay="50"
+          data-aos-duration="1000"
+          data-aos-easing="ease-in-out"
           className="round block mx-auto w-48 h-48"
           src={user?.photoURL}
           alt="user"
@@ -22,7 +27,14 @@ const MyProfile = () => {
           {user?.displayName}
         </h3>
 
-        <div className="buttons">
+        <div
+          data-aos="zoom-in-up"
+          data-aos-offset="200"
+          data-aos-delay="50"
+          data-aos-duration="1000"
+          data-aos-easing="ease-in-out"
+          className="buttons"
+        >
           <Link to="/dashboard" className="btn btn-primary mr-3">
             About Me
           </Link>

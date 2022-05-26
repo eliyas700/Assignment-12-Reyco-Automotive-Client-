@@ -27,7 +27,13 @@ import Blog from "./Pages/Blog/Blog";
 import Contact from "./Pages/ContactUs/Contact";
 import RequireAdmin from "./Pages/Authentication/RequireAdmin";
 import ScrollUp from "./Pages/ScrollTop/ScrollUp";
+import AOS from "aos";
+import "aos/dist/aos.css";
+import { useEffect } from "react";
 function App() {
+  useEffect(() => {
+    AOS.init();
+  }, []);
   return (
     <div>
       <Header></Header>

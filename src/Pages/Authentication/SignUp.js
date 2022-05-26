@@ -65,7 +65,14 @@ const SignUp = () => {
   };
   return (
     <div>
-      <div className="flex  justify-center items-center">
+      <div
+        data-aos="zoom-in-up"
+        data-aos-offset="200"
+        data-aos-delay="50"
+        data-aos-duration="1000"
+        data-aos-easing="ease-in-out"
+        className="flex  justify-center items-center"
+      >
         <div className="card w-96 bg-base-100 shadow-xl">
           <div className="card-body">
             <h2 className="text-center text-2xl font-bold">Sign Up</h2>
@@ -195,7 +202,13 @@ const SignUp = () => {
                 </Link>
               </small>
             </p>
-            <div>
+            <div
+              data-aos="zoom-in-up"
+              data-aos-offset="200"
+              data-aos-delay="50"
+              data-aos-duration="1000"
+              data-aos-easing="ease-in-out"
+            >
               <SocialLogin></SocialLogin>
             </div>
           </div>

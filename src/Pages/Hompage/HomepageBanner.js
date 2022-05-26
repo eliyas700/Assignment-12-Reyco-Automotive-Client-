@@ -12,12 +12,30 @@ const HomepageBanner = () => {
       <div className="hero-overlay bg-opacity-60"></div>
       <div className="hero-content text-center text-neutral-content">
         <div className="max-w-md">
-          <h1 className="mb-5 text-6xl font-bold">Genuine Parts</h1>
+          <h1
+            data-aos="fade-right"
+            data-aos-offset="200"
+            data-aos-delay="50"
+            data-aos-duration="1000"
+            data-aos-easing="ease-in-out"
+            className="mb-5 text-6xl font-bold"
+          >
+            Genuine Parts
+          </h1>
           <p className="mb-5 text-lg font-semibold">
             Get The best Car Parts at best price . Authentic Services
             ,Experienced Employees, World Wide Delivery.
           </p>
-          <button className="btn btn-primary">Explore Now</button>
+          <button
+            data-aos="zoom-in"
+            data-aos-offset="200"
+            data-aos-delay="50"
+            data-aos-duration="1000"
+            data-aos-easing="ease-in-out"
+            className="btn btn-primary"
+          >
+            Explore Now
+          </button>
         </div>
       </div>
     </div>

@@ -11,7 +11,14 @@ import "react-accessible-accordion/dist/fancy-example.css";
 const Blog = () => {
   return (
     <div className="w-full mx-auto lg:w-[80vw] my-4 min-h-screen">
-      <h2 className="text-3xl font-bold text-secondary text-center font-serif my-10">
+      <h2
+        data-aos="zoom-in-up"
+        data-aos-offset="200"
+        data-aos-delay="50"
+        data-aos-duration="1000"
+        data-aos-easing="ease-in-out"
+        className="text-3xl font-bold text-secondary text-center font-serif my-10"
+      >
         My Blog{" "}
       </h2>
       <Accordion>

@@ -5,14 +5,28 @@ const Contact = () => {
     <div>
       <div className="hero min-h-screen bg-base-200">
         <div className="hero-content flex-col lg:flex-row-reverse">
-          <div className="text-center lg:text-left">
+          <div
+            data-aos="fade-left"
+            data-aos-offset="200"
+            data-aos-delay="50"
+            data-aos-duration="1000"
+            data-aos-easing="ease-in-out"
+            className="text-center lg:text-left"
+          >
             <h1 className="text-5xl font-bold">Contact US!</h1>
             <p className="py-6">
               You are Valuable to us , Contact us For your Queries . We always
               Waiting for your Service. Have Fun
             </p>
           </div>
-          <div className="card flex-shrink-0 w-full max-w-md shadow-2xl bg-base-100">
+          <div
+            data-aos="fade-right"
+            data-aos-offset="200"
+            data-aos-delay="50"
+            data-aos-duration="1000"
+            data-aos-easing="ease-in-out"
+            className="card flex-shrink-0 w-full max-w-md shadow-2xl bg-base-100"
+          >
             <div className="card-body">
               <div className="form-control">
                 <label className="label">

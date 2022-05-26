@@ -19,7 +19,14 @@ const Product = ({ product }) => {
   };
   return (
     <div>
-      <div className="card card-side   bg-base-100 shadow-xl">
+      <div
+        data-aos="fade-up"
+        data-aos-offset="200"
+        data-aos-delay="50"
+        data-aos-duration="1000"
+        data-aos-easing="ease-in-out"
+        className="card card-side my-3  bg-base-100 shadow-xl"
+      >
         <figure className="w-48 h-60">
           <img src={img} alt={name} />
         </figure>

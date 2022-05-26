@@ -6,7 +6,14 @@ const Review = ({ review }) => {
   const { name, description, rating, img, country } = review;
   return (
     <div>
-      <div className="card text-center bg-base-100 shadow-xl">
+      <div
+        data-aos="flip-left"
+        data-aos-offset="200"
+        data-aos-delay="50"
+        data-aos-duration="1000"
+        data-aos-easing="ease-in-out"
+        className="card text-center bg-base-100 shadow-xl"
+      >
         <div className="card-body">
           <img
             width={"100px"}

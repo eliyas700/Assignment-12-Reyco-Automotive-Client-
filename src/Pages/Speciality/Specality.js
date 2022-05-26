@@ -3,7 +3,14 @@ import React from "react";
 const Specality = () => {
   return (
     <div className="grid grid-cols-2 lg:grid-cols-4 mx-6">
-      <div className="card card-side  bg-base-100 ">
+      <div
+        data-aos="flip-left"
+        data-aos-offset="200"
+        data-aos-delay="50"
+        data-aos-duration="1000"
+        data-aos-easing="ease-in-out"
+        className="card card-side   bg-base-100 "
+      >
         <figure>
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -59,7 +66,14 @@ const Specality = () => {
           <p>For orders from $12000</p>
         </div>
       </div>
-      <div className="card card-side bg-base-100 ">
+      <div
+        data-aos="flip-left"
+        data-aos-offset="200"
+        data-aos-delay="50"
+        data-aos-duration="1000"
+        data-aos-easing="ease-in-out"
+        className="card card-side bg-base-100 "
+      >
         <figure>
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -115,7 +129,14 @@ const Specality = () => {
           <p>Call Us anytime +11212122323</p>
         </div>
       </div>
-      <div className="card card-side bg-base-100 ">
+      <div
+        data-aos="flip-left"
+        data-aos-offset="200"
+        data-aos-delay="50"
+        data-aos-duration="1000"
+        data-aos-easing="ease-in-out"
+        className="card card-side bg-base-100 "
+      >
         <figure>
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -163,7 +184,14 @@ const Specality = () => {
           <p>Only Secure Payments</p>
         </div>
       </div>
-      <div className="card card-side bg-base-100 ">
+      <div
+        data-aos="flip-left"
+        data-aos-offset="200"
+        data-aos-delay="50"
+        data-aos-duration="1000"
+        data-aos-easing="ease-in-out"
+        className="card card-side bg-base-100 "
+      >
         <figure>
           <svg
             xmlns="http://www.w3.org/2000/svg"

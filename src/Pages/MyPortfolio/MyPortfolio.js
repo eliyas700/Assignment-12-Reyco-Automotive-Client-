@@ -6,6 +6,11 @@ const MyPortfolio = () => {
     <div>
       <div className="max-w-4xl flex items-center h-auto  flex-wrap mx-auto my-16 lg:my-0">
         <div
+          data-aos="fade-right"
+          data-aos-offset="200"
+          data-aos-delay="50"
+          data-aos-duration="1000"
+          data-aos-easing="ease-in-out"
           id="profile"
           className="w-full lg:w-3/5 rounded-lg lg:rounded-l-lg lg:rounded-r-none shadow-2xl bg-white opacity-75 mx-6 lg:mx-0"
         >
@@ -223,7 +228,14 @@ const MyPortfolio = () => {
           </div>
         </div>
 
-        <div className="w-full lg:w-2/5">
+        <div
+          data-aos="fade-left"
+          data-aos-offset="200"
+          data-aos-delay="50"
+          data-aos-duration="1000"
+          data-aos-easing="ease-in-out"
+          className="w-full lg:w-2/5"
+        >
           <img
             src="https://i.ibb.co/Vm77J00/pp.jpg"
             alt="eliyas"
@@ -232,7 +244,14 @@ const MyPortfolio = () => {
         </div>
       </div>
       <div>
-        <h2 className="text-3xl font-bold text-secondary text-center font-serif my-10">
+        <h2
+          data-aos="zoom-in-up"
+          data-aos-offset="200"
+          data-aos-delay="50"
+          data-aos-duration="1000"
+          data-aos-easing="ease-in-out"
+          className="text-3xl font-bold text-secondary text-center font-serif my-10"
+        >
           My Best Projects{" "}
         </h2>
         <MyProjects></MyProjects>

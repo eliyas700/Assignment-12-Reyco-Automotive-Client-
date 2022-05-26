@@ -57,7 +57,14 @@ const AddProduct = () => {
   };
   return (
     <div>
-      <div className="flex justify-center items-center">
+      <div
+        data-aos="zoom-in-up"
+        data-aos-offset="200"
+        data-aos-delay="50"
+        data-aos-duration="1000"
+        data-aos-easing="ease-in-out"
+        className="flex justify-center items-center"
+      >
         <div className="card w-md bg-base-100 shadow-xl">
           <div className="card-body py-6">
             <h2 className="text-center text-2xl font-bold">Add Product</h2>
@@ -201,6 +208,11 @@ const AddProduct = () => {
                 </label>
               </div>
               <input
+                data-aos="zoom-in-up"
+                data-aos-offset="200"
+                data-aos-delay="50"
+                data-aos-duration="1000"
+                data-aos-easing="ease-in-out"
                 className="btn btn-primary mx-auto mt-2 mb-4 shadow-xl  w-full  text-white"
                 type="submit"
                 value="Add Now"

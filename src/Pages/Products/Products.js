@@ -8,7 +8,14 @@ const Products = () => {
 
   return (
     <div className="w-[98%] mx-auto min-h-screen">
-      <h3 className="text-3xl font-bold text-secondary text-center font-serif my-3">
+      <h3
+        data-aos="zoom-in-up"
+        data-aos-offset="200"
+        data-aos-delay="50"
+        data-aos-duration="1000"
+        data-aos-easing="ease-in-out"
+        className="text-3xl font-bold text-secondary text-center font-serif my-3"
+      >
         Available Parts
       </h3>
       {isLoading ? (
